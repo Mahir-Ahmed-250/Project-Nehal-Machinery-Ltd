@@ -1,0 +1,11 @@
+.bannerImg {
+    width: 100%;
+    height: 500px;
+}
+
+.bannerTitle {
+    position: absolute;
+    top: 400px;
+    left: 45%;
+    z-index: 1;
+}

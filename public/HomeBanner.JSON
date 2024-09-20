@@ -1,0 +1,18 @@
+[
+    {
+        "id": "1",
+        "name": "Excavator",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSB9cQzo3HYFmfiA8VcZhQlFfZ4VKSd9ZAI3kbdJ5_6aNBbHKFMPzIpbMOUm_RCkbB-lto&usqp=CAU"
+    },
+    {
+        "id": "2",
+        "name": "New Bulldozer",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTH_-YIG3yAMqlnX7qzwD-5E61AoE6ieLKKww&s"
+    },
+    {
+        "id": "3",
+        "name": "Forklift",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP_49NsHWLwSnx9a5IHbKnAJ_n5i4AqUiggKJsRq6em4tFGNyakBLWfU1ThRXTnyoQ-M0&usqp=CAU"
+    }
+]
+  
