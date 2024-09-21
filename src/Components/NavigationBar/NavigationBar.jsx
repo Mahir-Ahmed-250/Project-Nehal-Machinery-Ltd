@@ -1,31 +1,41 @@
-import React from "react";
+import React, { useState } from "react";
 
 import "./NavigationBar.css";
 import { Link } from "react-router-dom";
+import { RiMenu3Fill } from "react-icons/ri";
+import { RxCross1 } from "react-icons/rx";
 
 const NavigationBar = () => {
+  const [isActive, setIsActive] = useState(false);
   return (
     <>
-      <nav class="navbar navbar-expand-lg navbar-light bg-light container">
+      <nav class="navbar navbar-expand-lg navbar-light container">
         <Link class="navbar-brand companyName" href="#">
-        Nehal Machinery Ltd
+          Nehal Machinery Ltd
         </Link>
+
         <button
-          class="navbar-toggler"
+          class="navbar-toggler focus-ring focus-ring-light me-2"
           type="button"
           data-toggle="collapse"
           data-target="#navbarNavDropdown"
           aria-controls="navbarNavDropdown"
           aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
+          aria-label="Toggle navigation">
+          <RiMenu3Fill onClick={() => setIsActive(!isActive)} />
         </button>
-        <div class="collapse navbar-collapse navbarItems" id="navbarNavDropdown">
+        <div
+          class="collapse navbar-collapse navbarItems"
+          id="navbarNavDropdown">
           <ul class="navbar-nav ">
             <li class="nav-item">
               <Link class="nav-link" href="#">
                 Home <span class="sr-only"></span>
+              </Link>
+            </li>
+            <li class="nav-item">
+              <Link class="nav-link" href="#">
+                About Us
               </Link>
             </li>
             <li class="nav-item dropdown">
@@ -34,9 +44,8 @@ const NavigationBar = () => {
                 href="#"
                 role="button"
                 data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-             Products & Services
+                aria-expanded="false">
+                Products & Services
               </Link>
               <ul class="dropdown-menu">
                 <li>
@@ -58,8 +67,7 @@ const NavigationBar = () => {
                     href="#"
                     role="button"
                     data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                  >
+                    aria-expanded="false">
                     Dropdown 1
                   </Link>
                   <ul class="dropdown-menu">
@@ -76,22 +84,30 @@ const NavigationBar = () => {
                     <li>
                       <hr class="dropdown-divider" />
                     </li>
-                   
                   </ul>
                 </li>
               </ul>
             </li>
             <li class="nav-item">
               <Link class="nav-link" href="#">
-                Features
+                Agents
               </Link>
             </li>
             <li class="nav-item">
               <Link class="nav-link" href="#">
-                Pricing
+                Shop
               </Link>
             </li>
-           
+            <li class="nav-item">
+              <Link class="nav-link" href="#">
+                Blog
+              </Link>
+            </li>
+            <li class="nav-item">
+              <Link class="nav-link" href="#">
+                Contact
+              </Link>
+            </li>
           </ul>
         </div>
       </nav>

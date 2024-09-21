@@ -38,12 +38,7 @@ const HomeBanner = () => {
         className="mySwiper">
         {banners.map((banner) => (
           <SwiperSlide key={banner.id}>
-            <img
-             
-              src={banner.image}
-              className="bannerImg"
-              alt=""
-            />
+            <img src={banner.image} className="bannerImg" alt="" />
           </SwiperSlide>
         ))}
       </Swiper>
@@ -53,10 +48,21 @@ const HomeBanner = () => {
         size={50}
         color="#ffff"
       />
-      <GrFormNext onClick={nextHandler} className="bannerBtnNext" size={50} color="#ffff" />
-     <div>
-      <center><h2   className="bannerText">Welcome To The <br />Company</h2></center>
-     </div>
+      <GrFormNext
+        onClick={nextHandler}
+        className="bannerBtnNext"
+        size={50}
+        color="#ffff"
+      />
+      <div>
+        <center className="animate__animated animate__fadeInUp animate__slow bannerTextSection">
+          <h2 className="bannerText">
+            Welcome To The <br />
+            Company
+          </h2>
+          <button className="bannerBtn">Watch More</button>
+        </center>
+      </div>
     </>
   );
 };

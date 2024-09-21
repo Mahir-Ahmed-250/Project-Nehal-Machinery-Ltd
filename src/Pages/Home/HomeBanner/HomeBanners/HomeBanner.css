@@ -2,6 +2,7 @@
     height: 80vh;
     width: 100%;
 }
+
 .bannerBtnPrev {
     position: absolute;
     margin-top: -90px;
@@ -22,15 +23,47 @@
     cursor: pointer;
 }
 
-.bannerText{
+.bannerTextSection {
     position: absolute;
     width: 100%;
     height: 100%;
-    margin-top: -500px;
+    margin-top: -450px;
     z-index: 1;
-    font-size: 90px;
     color: #fffafa;
-    text-shadow: 4px 4px #343131; 
+    text-shadow: 4px 4px 4px #2b2828;
+    ;
 }
 
+.bannerText {
+    font-size: 90px;
+}
 
+.bannerBtn {
+    border: 3px solid;
+    background: none;
+    font-size: 30px;
+    font-weight: 700;
+    color: #fffafa;
+    width: 350px;
+    height: 70px;
+    text-shadow: 4px 4px #343131;
+    margin-top: 20px;
+}
+
+.bannerBtn:hover {
+    background-color: #ffffff;
+    color: black;
+    border: 3px solid #fffafa;
+    transition: 0.5s;
+    text-shadow: none;
+}
+
+@media screen and (max-width: 760px) {
+    .bannerText {
+        font-size: 50px;
+    }
+
+    .companyName {
+        font-size: 22px !important;
+    }
+}
