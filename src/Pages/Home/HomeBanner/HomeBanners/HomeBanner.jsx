@@ -34,16 +34,12 @@ const HomeBanner = () => {
           delay: 2500,
           disableOnInteraction: false,
         }}
-        pagination={{
-          clickable: true,
-        }}
         modules={[EffectFade, Navigation, Pagination, Autoplay]}
         className="mySwiper">
         {banners.map((banner) => (
           <SwiperSlide key={banner.id}>
             <img
-              data-aos="fade-in"
-              data-aos-duration="10000"
+             
               src={banner.image}
               className="bannerImg"
               alt=""
@@ -55,11 +51,12 @@ const HomeBanner = () => {
         onClick={prevHandler}
         className="bannerBtnPrev"
         size={50}
+        color="#ffff"
       />
-      <GrFormNext onClick={nextHandler} className="bannerBtnNext" size={50} />
-      <center>
-        <h2 className="bannerTitle">HELLO</h2>
-      </center>
+      <GrFormNext onClick={nextHandler} className="bannerBtnNext" size={50} color="#ffff" />
+     <div>
+      <center><h2   className="bannerText">Welcome To The <br />Company</h2></center>
+     </div>
     </>
   );
 };

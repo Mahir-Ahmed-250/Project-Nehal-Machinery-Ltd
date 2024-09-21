@@ -8,6 +8,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "swiper/css/effect-fade";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "react-bootstrap-submenu/dist/index.css";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
