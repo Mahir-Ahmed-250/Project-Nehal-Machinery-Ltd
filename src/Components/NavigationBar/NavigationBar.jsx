@@ -1,10 +1,7 @@
 import React, { useState } from "react";
-
 import "./NavigationBar.css";
 import { Link } from "react-router-dom";
 import { RiMenu3Fill } from "react-icons/ri";
-import { RxCross1 } from "react-icons/rx";
-
 const NavigationBar = () => {
   const [isActive, setIsActive] = useState(false);
   return (

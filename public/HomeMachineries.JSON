@@ -1,0 +1,56 @@
+[
+    {
+        "id": "1",
+        "name": "Excavator",
+        "image": "/Assets/Home machineries 1.jpg",
+        "description": "A large construction equipment used for digging and moving earth."
+    },
+    {
+        "id": "2",
+        "name": "Bulldozer",
+        "image": "/Assets/Home machineries 2.jpg",
+        "description": "A powerful tractor equipped with a broad, flat blade for pushing large quantities of soil."
+    },
+    {
+        "id": "3",
+        "name": "Crane",
+        "image": "/Assets/Home machineries 3.jpg",
+        "description": "A machine designed for lifting and moving heavy materials with a hoist."
+    },
+    {
+        "id": "4",
+        "name": "Forklift",
+        "image": "/Assets/Home machineries 4.jpg",
+        "description": "A small industrial vehicle with a power-operated forked platform for lifting and moving loads."
+    },
+    {
+        "id": "5",
+        "name": "Backhoe Loader",
+        "image": "/Assets/Home machineries 5.jpg",
+        "description": "A versatile machine with a digging bucket on the back and a loader on the front."
+    },
+    {
+        "id": "6",
+        "name": "Dump Truck",
+        "image": "/Assets/Home machineries 6.jpg",
+        "description": "A truck with a container that can be raised to allow materials to be dumped out."
+    },
+    {
+        "id": "7",
+        "name": "Paver",
+        "image": "/Assets/Home machineries 7.jpg",
+        "description": "A machine used to lay asphalt on roads, parking lots, and other surfaces."
+    },
+    {
+        "id": "8",
+        "name": "Compactor",
+        "image": "/Assets/Home machineries 8.jpg",
+        "description": "A machine used to compress soil, gravel, or asphalt to increase its density."
+    },
+    {
+        "id": "9",
+        "name": "Skid Steer Loader",
+        "image": "/Assets/Home machineries 9.jpg",
+        "description": "A compact, maneuverable machine with lift arms that can be fitted with various attachments."
+    }
+]
