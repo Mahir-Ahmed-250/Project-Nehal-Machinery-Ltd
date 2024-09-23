@@ -38,29 +38,11 @@
     font-size: 90px;
 }
 
-.bannerBtn {
-    border: 3px solid;
-    background: none;
-    font-size: 30px;
-    font-weight: 700;
-    color: #fffafa;
-    width: 350px;
-    height: 70px;
-    text-shadow: 4px 4px #343131;
-    margin-top: 20px;
-}
 
-.bannerBtn:hover {
-    background-color: #ffffff;
-    color: black;
-    border: 3px solid #fffafa;
-    transition: 0.5s;
-    text-shadow: none;
-}
-
-@media screen and (max-width: 760px) {
+@media screen and (max-width: 1300px) {
     .bannerText {
-        font-size: 50px;
+        font-size: 30px;
+        margin-top: 150px;
     }
 
     .companyName {

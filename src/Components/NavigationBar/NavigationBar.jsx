@@ -7,7 +7,7 @@ const NavigationBar = () => {
   return (
     <>
       <nav class="navbar navbar-expand-lg navbar-light container">
-        <Link class="navbar-brand companyName" href="#">
+        <Link class="navbar-brand companyName" to='/'>
           Nehal Machinery Ltd
         </Link>
 
@@ -30,11 +30,7 @@ const NavigationBar = () => {
                 Home <span class="sr-only"></span>
               </Link>
             </li>
-            <li class="nav-item">
-              <Link class="nav-link" href="#">
-                About Us
-              </Link>
-            </li>
+           
             <li class="nav-item dropdown">
               <Link
                 class="nav-link dropdown-toggle"
@@ -103,6 +99,11 @@ const NavigationBar = () => {
             <li class="nav-item">
               <Link class="nav-link" href="#">
                 Contact
+              </Link>
+            </li>
+            <li class="nav-item">
+              <Link class="nav-link" href="#">
+                About Us
               </Link>
             </li>
           </ul>

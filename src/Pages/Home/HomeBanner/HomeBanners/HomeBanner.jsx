@@ -3,6 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, EffectFade, Navigation, Pagination } from "swiper/modules";
 import { GrFormPrevious, GrFormNext } from "react-icons/gr";
 import "./HomeBanner.css";
+import Button from "../../../../Components/Button/Button";
 
 const HomeBanner = () => {
   const [banners, setBanners] = useState([]);
@@ -60,7 +61,8 @@ const HomeBanner = () => {
             Welcome To The <br />
             Company
           </h2>
-          <button className="bannerBtn">Watch More</button>
+          <Button title="Watch More" width="350px" color="#000" border="2px solid"/>
+         
         </center>
       </div>
     </>
