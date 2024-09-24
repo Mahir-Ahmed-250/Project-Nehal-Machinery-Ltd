@@ -13,7 +13,7 @@ const HomeMachineries = () => {
             .then(data => setProducts(data))
     }, [])
   return (
-    <div>
+    <> 
       <Title title="Our Machinery" />
       <div className="container text-left">
             <div className="row mt-3"  data-aos="fade-up">
@@ -27,7 +27,7 @@ const HomeMachineries = () => {
                 </div>
             </div>
         </div>
-    </div>
+    </>
   );
 };
 
