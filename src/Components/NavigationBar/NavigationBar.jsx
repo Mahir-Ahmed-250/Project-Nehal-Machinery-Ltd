@@ -7,7 +7,7 @@ const NavigationBar = () => {
   return (
     <>
       <nav class="navbar navbar-expand-lg navbar-light container">
-        <Link class="navbar-brand companyName" to='/'>
+        <Link class="navbar-brand companyName" to="/">
           Nehal Machinery Ltd
         </Link>
 
@@ -26,15 +26,15 @@ const NavigationBar = () => {
           id="navbarNavDropdown">
           <ul class="navbar-nav ">
             <li class="nav-item">
-              <Link class="nav-link" href="#">
+              <Link class="nav-link" to="/home">
                 Home <span class="sr-only"></span>
               </Link>
             </li>
-           
+
             <li class="nav-item dropdown">
               <Link
                 class="nav-link dropdown-toggle"
-                href="#"
+                to="/products"
                 role="button"
                 data-bs-toggle="dropdown"
                 aria-expanded="false">
@@ -82,27 +82,27 @@ const NavigationBar = () => {
               </ul>
             </li>
             <li class="nav-item">
-              <Link class="nav-link" href="#">
+              <Link class="nav-link" to="/agents">
                 Agents
               </Link>
             </li>
             <li class="nav-item">
-              <Link class="nav-link" href="#">
+              <Link class="nav-link" to="/shop">
                 Shop
               </Link>
             </li>
             <li class="nav-item">
-              <Link class="nav-link" href="#">
+              <Link class="nav-link" to="/blog">
                 Blog
               </Link>
             </li>
             <li class="nav-item">
-              <Link class="nav-link" href="#">
+              <Link class="nav-link" to="/contact">
                 Contact
               </Link>
             </li>
             <li class="nav-item">
-              <Link class="nav-link" href="#">
+              <Link class="nav-link" to="/about">
                 About Us
               </Link>
             </li>
