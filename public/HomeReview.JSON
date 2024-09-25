@@ -1,0 +1,30 @@
+[
+    {
+        "id": 100,
+        "name": "Dilip Kumar Roy",
+        "img": "./assets/user-1.png",
+        "occupation": "Businessman",
+        "testimonial": "I was searching for a  perfect solution for my secret problem for a long time but failed. One of my well-wishers suggests me to take Naturals Nabosokti.I collected from online and started taking it regularly. I astonished by the effectivity of noboshokti. Now I’m enjoying a happy conjugal life. All credit goes to Naturals."
+    },
+    {
+        "id": 101,
+        "name": "Mohiuddin Sadique",
+        "img": "./assets/user-2.png",
+        "occupation": "Software Engineer",
+        "testimonial": "I’ve bought Maringa Super Food form Naturals. Really impressed by their way of communication, packing, quality as well as presentation and quick-convenient delivery. Go ahead."
+    },
+    {
+        "id": 102,
+        "name": "Farha Mahmud Trina",
+        "img": "./assets/user-3.png",
+        "occupation": "Vice Chairman, Investment Committee, E-commerce Association of Bangladesh",
+        "testimonial": "So honored for the wonderful gesture of Syed Mahdi Hossain who surprised me with total organic food from Naturals. Beautiful packaging and obviously I must mention “On-time delivery” surprised me the most."
+    },
+    {
+        "id": 103,
+        "name": "Mir Subrina",
+        "img": "./assets/user-4.png",
+        "occupation": "Student, Jagannath University",
+        "testimonial": "I’ve purchased some food supplement products for my parents to solve their health issues. Within a month I noticed they regain their health and become stronger than the past. Thanks Naturals."
+    }
+]

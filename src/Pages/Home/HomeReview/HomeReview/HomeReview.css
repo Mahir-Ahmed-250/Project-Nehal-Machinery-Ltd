@@ -1,0 +1,26 @@
+.testimonial-name-occupation {
+    text-align: center;
+    padding-bottom: 40px;
+    font-family: 'Source Sans Pro', sans-serif;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.testimonial-name {
+    color: #00a651;
+}
+
+.testimonial-line:after {
+    content: "";
+    z-index: -1;
+    border-left: 1px solid #00a651;
+}
+
+.testimonial {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 18px;
+    cursor: pointer;
+    margin-top: 50px;
+    text-align: center;
+    margin-right: 20px;
+}

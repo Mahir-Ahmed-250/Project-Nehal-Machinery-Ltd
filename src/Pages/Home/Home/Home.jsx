@@ -3,7 +3,7 @@ import HomeBanner from "../HomeBanner/HomeBanners/HomeBanner";
 import HomeMachineries from "../HomeMachinery/HomeMachineries/HomeMachineries";
 import WhyChooseUs from "../WhyChooseUs/WhyChooseUs";
 import HomeAboutUs from "../HomeAboutUs/HomeAboutUs";
-import HomeReview from "../HomeReview/HomeReview";
+import HomeReviews from "../HomeReview/HomeReviews/HomeReviews";
 
 const Home = () => {
   return (
@@ -12,7 +12,7 @@ const Home = () => {
       <HomeMachineries />
       <WhyChooseUs />
       <HomeAboutUs />
-      <HomeReview/>
+      <HomeReviews />
     </>
   );
 };
