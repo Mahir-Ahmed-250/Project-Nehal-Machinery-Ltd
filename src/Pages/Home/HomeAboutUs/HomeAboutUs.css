@@ -1,22 +1,26 @@
-.background-image {
+.homeAboutUsBackgroundImage {
     position: relative;
     height: 30vh;
     /* Adjust the height as needed */
-    background-image: url('https://bwc-manufacturers.com/wp-content/uploads/2024/04/building-gb6d843fa9_1920-min-1.jpg');
+    background-image: url('/public/Assets/HomeAboutUsBackgroundImage.jpg');
     /* Replace with your image URL */
     background-size: cover;
     background-attachment: fixed;
-    padding: 100px 00px 40px 220px;
+    padding-top: 50px;
+    padding-bottom: 350px;
+   
 }
 
-.overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.918);
-    /* Black shade with 50% opacity */
-    z-index: 11;
-    /* Ensure overlay is above the background */
+.icon{
+    border-radius: 50%;
+    padding: 15px;
+    background-color: red;
+}
+.homeAboutUsCount{
+    font-size: 48px;
+    font-weight: 700;
+    color: #fff;
+}
+.homeAboutUs{
+    color: #fff;
 }

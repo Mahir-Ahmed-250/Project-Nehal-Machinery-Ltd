@@ -13,7 +13,7 @@ const WhyChooseUs = () => {
             <Card>
               <Card.Body>
                 <Card.Img
-                  variant="end"
+                
                   className="chooseLogo"
                   src="https://img1.wsimg.com/isteam/ip/8234a433-abdd-4647-8989-84ba6d0f6d2b/pngtree-exploring-the-world-of-iot-devices-and.jpg/:/rs=w:365,h:365,cg:true,m/cr=w:365,h:365"
                 />
@@ -31,7 +31,7 @@ const WhyChooseUs = () => {
             <Card className="h-100">
               <Card.Body>
                 <Card.Img
-                  variant="end"
+            
                   className="chooseLogo"
                   src="https://img1.wsimg.com/isteam/ip/8234a433-abdd-4647-8989-84ba6d0f6d2b/istockphoto-1179633351-612x612.jpg/:/cr=t:0%25,l:21.9%25,w:56.21%25,h:100%25/rs=w:365,h:365,cg:true"
                 />
@@ -49,7 +49,7 @@ const WhyChooseUs = () => {
             <Card className="h-100">
               <Card.Body>
                 <Card.Img
-                  variant="end"
+          
                   className="chooseLogo"
                   src="https://img1.wsimg.com/isteam/ip/8234a433-abdd-4647-8989-84ba6d0f6d2b/19414-HandShake-sstock1931473889.jpg/:/cr=t:0%25,l:22.22%25,w:55.56%25,h:100%25/rs=w:365,h:365,cg:true"
                 />
