@@ -8,7 +8,7 @@ import Button from "../../../../Components/Button/Button";
 const HomeBanner = () => {
   const [banners, setBanners] = useState([]);
   useEffect(() => {
-    fetch("HomeBanner.json")
+    fetch("HomeBanner.JSON")
       .then((res) => res.json())
       .then((data) => setBanners(data));
   }, []);

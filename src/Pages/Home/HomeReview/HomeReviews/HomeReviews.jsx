@@ -8,7 +8,7 @@ import Title from "../../../../Components/Title/Title";
 const HomeReviews = () => {
   const [reviews, setReviews] = useState([]);
   useEffect(() => {
-    fetch("HomeReview.json")
+    fetch("HomeReview.JSON")
       .then((res) => res.json())
       .then((data) => setReviews(data));
   }, []);
