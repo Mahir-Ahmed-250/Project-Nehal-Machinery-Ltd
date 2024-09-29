@@ -18,12 +18,14 @@ const NavigationBar = () => {
           data-target="#navbarNavDropdown"
           aria-controls="navbarNavDropdown"
           aria-expanded="false"
-          aria-label="Toggle navigation">
+          aria-label="Toggle navigation"
+        >
           <RiMenu3Fill onClick={() => setIsActive(!isActive)} />
         </button>
         <div
           class="collapse navbar-collapse navbarItems"
-          id="navbarNavDropdown">
+          id="navbarNavDropdown"
+        >
           <ul class="navbar-nav ">
             <li class="nav-item">
               <Link class="nav-link" to="/home">
@@ -37,18 +39,39 @@ const NavigationBar = () => {
                 to="/products"
                 role="button"
                 data-bs-toggle="dropdown"
-                aria-expanded="false">
+                aria-expanded="false"
+              >
                 Products & Services
               </Link>
               <ul class="dropdown-menu">
                 <li>
                   <Link class="dropdown-item" href="#">
-                    Action
+                    Machineries
                   </Link>
                 </li>
                 <li>
                   <Link class="dropdown-item" href="#">
-                    Another action
+                    Molds
+                  </Link>
+                </li>
+                <li>
+                  <Link class="dropdown-item" href="#">
+                    Raw Materials
+                  </Link>
+                </li>
+                <li>
+                  <Link class="dropdown-item" href="#">
+                    Installation Commission
+                  </Link>
+                </li>
+                <li>
+                  <Link class="dropdown-item" href="#">
+                    Consultancy Service
+                  </Link>
+                </li>
+                <li>
+                  <Link class="dropdown-item" href="#">
+                    Others
                   </Link>
                 </li>
                 <li>
@@ -60,7 +83,8 @@ const NavigationBar = () => {
                     href="#"
                     role="button"
                     data-bs-toggle="dropdown"
-                    aria-expanded="false">
+                    aria-expanded="false"
+                  >
                     Dropdown 1
                   </Link>
                   <ul class="dropdown-menu">
