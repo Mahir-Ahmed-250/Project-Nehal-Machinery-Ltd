@@ -1,7 +1,7 @@
 import React from "react";
 import Title from "../../../Components/Title/Title";
 import { Card } from "react-bootstrap";
-import "./WhyChooseUs.css";
+import "./HomeWhyChooseUs.css";
 
 const WhyChooseUs = () => {
   return (

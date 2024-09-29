@@ -1,0 +1,28 @@
+[
+  {
+    "id": "1",
+    "name": "BORCELLE",
+    "image": "/Assets/Customer-1.jpg"
+  },
+  {
+    "id": "2",
+    "name": "Pizza Hut",
+    "image": "/Assets/Customer-2.jpg"
+  },
+  {
+    "id": "3",
+    "name": "Adidas",
+    "image": "/Assets/Customer-3.jpg"
+  },
+  {
+    "id": "4",
+    "name": "Dell",
+    "image": "/Assets/Customer-4.jpg"
+  },
+  {
+    "id": "5",
+    "name": "Indiamart",
+    "image": "/Assets/Customer-5.jpg"
+  }
+]
+  
