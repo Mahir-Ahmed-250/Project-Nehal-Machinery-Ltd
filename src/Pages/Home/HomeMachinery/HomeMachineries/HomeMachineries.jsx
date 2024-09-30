@@ -3,6 +3,7 @@ import Title from "../../../../Components/Title/Title";
 import { Link } from "react-router-dom";
 import HomeMachinery from "../HomeMachinery/HomeMachinery";
 import Button from "../../../../Components/Button/Button";
+import "./HomeMachineries.css";
 
 const HomeMachineries = () => {
   const [products, setProducts] = useState([]);
@@ -12,7 +13,7 @@ const HomeMachineries = () => {
       .then((data) => setProducts(data));
   }, []);
   return (
-    <>
+    <div className="gg">
       <Title title="Our Machinery" />
       <div className="container text-left">
         <div className="row mt-3" data-aos="fade-up" data-aos-duration="1000">
@@ -33,7 +34,7 @@ const HomeMachineries = () => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

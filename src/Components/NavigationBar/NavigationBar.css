@@ -1,21 +1,11 @@
-.companyName {
-  font-size: 35px !important;
-  font-weight: 700;
-  text-shadow: 4px 4px #a0a0a0;
+.companyNameAndLogo {
+  display: flex;
+  align-items: center;
 }
 
-.navbar-nav .nav-link {
-  color: #fff;
-}
-
-.dropend .dropdown-toggle {
-  color: salmon;
-  margin-left: 1em;
-}
-
-.dropdown-item:hover {
-  background-color: lightsalmon;
-  color: #fff;
+.navbar {
+  z-index: 11 !important;
+  background-color: rgb(241, 241, 241);
 }
 
 .dropdown:hover>.dropdown-menu,
