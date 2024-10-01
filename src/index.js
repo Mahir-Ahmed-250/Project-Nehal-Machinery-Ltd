@@ -6,7 +6,6 @@ import { BrowserRouter } from "react-router-dom";
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
-import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "swiper/css/effect-fade";
 import "bootstrap/dist/css/bootstrap.min.css";
