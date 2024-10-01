@@ -14,7 +14,7 @@ const HomeOurCustomers = () => {
   return (
     <div>
       <Title title="Our Valued Customers" />
-      <div className="container">
+      <div className="container homeCustomerContainer">
         <Swiper
           slidesPerView={1}
           spaceBetween={30}
