@@ -1,7 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, EffectFade, Navigation, Pagination } from "swiper/modules";
-import { GrFormPrevious, GrFormNext } from "react-icons/gr";
 import "./HomeBanner.css";
 import Button from "../../../../Components/Button/Button";
 import Carousel from "react-multi-carousel";
@@ -13,15 +10,7 @@ const HomeBanner = () => {
       .then((res) => res.json())
       .then((data) => setBanners(data));
   }, []);
-  const [swiperRef, setSwiperRef] = useState(null);
 
-  const prevHandler = () => {
-    swiperRef.slidePrev();
-  };
-
-  const nextHandler = () => {
-    swiperRef.slideNext();
-  };
   return (
     <>
     <div
@@ -31,8 +20,9 @@ const HomeBanner = () => {
   }}
 >
   <Carousel
+
     additionalTransfrom={0}
-    arrows
+    arrows={true}
     autoPlaySpeed={3000}
     centerMode={false}
     className=""
@@ -45,7 +35,7 @@ const HomeBanner = () => {
     keyBoardControl
     minimumTouchDrag={80}
     pauseOnHover
-    renderArrowsWhenDisabled={false}
+    renderArrowsWhenDisabled={true}
     renderButtonGroupOutside={false}
     renderDotsOutside
     responsive={{
@@ -71,6 +61,7 @@ const HomeBanner = () => {
         items: 1
       }
     }}
+   
     rewind={false}
     rewindWithAnimation={false}
     rtl={false}

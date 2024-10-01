@@ -20,8 +20,8 @@ const HomeMachineries = () => {
           {products.slice(0, 6).map((product) => (
             <HomeMachinery key={product.id} product={product}></HomeMachinery>
           ))}
-          <div class="row mt-4">
-            <div class="text-center">
+          <div className="row mt-4">
+            <div className="text-center">
               <Link to="/products">
                 <Button
                   title="Explore More"

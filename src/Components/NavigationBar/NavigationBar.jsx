@@ -7,9 +7,9 @@ const NavigationBar = () => {
   const [isActive, setIsActive] = useState(false);
   return (
     <>
-      <nav class="navbar navbar-expand-lg sticky-top">
+      <nav className="navbar navbar-expand-lg sticky-top">
         <div className="container">
-          <Link class="navbar-brand companyNameAndLogo" to="/">
+          <Link className="navbar-brand companyNameAndLogo" to="/">
             <div>
               <img src={logo} height="60" width="60" alt="logo" />
             </div>
@@ -19,7 +19,7 @@ const NavigationBar = () => {
           </Link>
 
           <button
-            class="navbar-toggler focus-ring focus-ring-light me-2"
+            className="navbar-toggler focus-ring focus-ring-light me-2"
             type="button"
             data-toggle="collapse"
             data-target="#navbarNavDropdown"
@@ -29,107 +29,107 @@ const NavigationBar = () => {
             <RiMenu3Fill onClick={() => setIsActive(!isActive)} />
           </button>
           <div
-            class="collapse navbar-collapse navbarItems"
+            className="collapse navbar-collapse navbarItems"
             id="navbarNavDropdown">
-            <ul class="navbar-nav ">
-              <li class="nav-item">
-                <Link class="nav-link" to="/home">
-                  Home <span class="sr-only"></span>
+            <ul className="navbar-nav ">
+              <li className="nav-item">
+                <Link className="nav-link" to="/home">
+                  Home <span className="sr-only"></span>
                 </Link>
               </li>
 
-              <li class="nav-item dropdown">
+              <li className="nav-item dropdown">
                 <Link
-                  class="nav-link dropdown-toggle"
+                  className="nav-link dropdown-toggle"
                   to="/products"
                   role="button"
                   data-bs-toggle="dropdown"
                   aria-expanded="false">
                   Products & Services
                 </Link>
-                <ul class="dropdown-menu">
+                <ul className="dropdown-menu">
                   <li>
-                    <Link class="dropdown-item" href="#">
+                    <Link className="dropdown-item" href="#">
                       Machineries
                     </Link>
                   </li>
                   <li>
-                    <Link class="dropdown-item" href="#">
+                    <Link className="dropdown-item" href="#">
                       Molds
                     </Link>
                   </li>
                   <li>
-                    <Link class="dropdown-item" href="#">
+                    <Link className="dropdown-item" href="#">
                       Raw Materials
                     </Link>
                   </li>
                   <li>
-                    <Link class="dropdown-item" href="#">
+                    <Link className="dropdown-item" href="#">
                       Installation Commission
                     </Link>
                   </li>
                   <li>
-                    <Link class="dropdown-item" href="#">
+                    <Link className="dropdown-item" href="#">
                       Consultancy Service
                     </Link>
                   </li>
                   <li>
-                    <Link class="dropdown-item" href="#">
+                    <Link className="dropdown-item" href="#">
                       Others
                     </Link>
                   </li>
                   <li>
-                    <hr class="dropdown-divider" />
+                    <hr className="dropdown-divider" />
                   </li>
-                  <li class="nav-item dropend">
+                  <li className="nav-item dropend">
                     <Link
-                      class="nav-link dropdown-toggle"
+                      className="nav-link dropdown-toggle"
                       href="#"
                       role="button"
                       data-bs-toggle="dropdown"
                       aria-expanded="false">
                       Dropdown 1
                     </Link>
-                    <ul class="dropdown-menu">
+                    <ul className="dropdown-menu">
                       <li>
-                        <Link class="dropdown-item" href="#">
+                        <Link className="dropdown-item" href="#">
                           Action
                         </Link>
                       </li>
                       <li>
-                        <Link class="dropdown-item" href="#">
+                        <Link className="dropdown-item" href="#">
                           Another action
                         </Link>
                       </li>
                       <li>
-                        <hr class="dropdown-divider" />
+                        <hr className="dropdown-divider" />
                       </li>
                     </ul>
                   </li>
                 </ul>
               </li>
-              <li class="nav-item">
-                <Link class="nav-link" to="/agents">
+              <li className="nav-item">
+                <Link className="nav-link" to="/agents">
                   Agents
                 </Link>
               </li>
-              <li class="nav-item">
-                <Link class="nav-link" to="/shop">
+              <li className="nav-item">
+                <Link className="nav-link" to="/shop">
                   Shop
                 </Link>
               </li>
-              <li class="nav-item">
-                <Link class="nav-link" to="/blog">
+              <li className="nav-item">
+                <Link className="nav-link" to="/blog">
                   Blog
                 </Link>
               </li>
-              <li class="nav-item">
-                <Link class="nav-link" to="/contact">
+              <li className="nav-item">
+                <Link className="nav-link" to="/contact">
                   Contact
                 </Link>
               </li>
-              <li class="nav-item">
-                <Link class="nav-link" to="/about">
+              <li className="nav-item">
+                <Link className="nav-link" to="/about">
                   About Us
                 </Link>
               </li>

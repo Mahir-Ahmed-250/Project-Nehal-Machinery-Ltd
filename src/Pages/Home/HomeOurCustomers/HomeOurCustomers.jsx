@@ -3,7 +3,7 @@ import Title from "../../../Components/Title/Title";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "./HomeOurCustomers.css";
 
-import { EffectCoverflow, Pagination } from "swiper/modules";
+import { EffectCoverflow, Pagination, Autoplay } from "swiper/modules";
 const HomeOurCustomers = () => {
   const [customers, setCustomers] = useState([]);
   useEffect(() => {
@@ -14,12 +14,12 @@ const HomeOurCustomers = () => {
   return (
     <div>
       <Title title="Our Valued Customers" />
-      <center className="container">
+      <div className="container">
         <Swiper
           slidesPerView={1}
-          spaceBetween={10}
+          spaceBetween={30}
           loop={true}
-          loopFillGroupWithBlank={true}
+          loopFillGroupWithBlank={false}
           breakpoints={{
             768: {
               slidesPerView: 1,
@@ -36,19 +36,19 @@ const HomeOurCustomers = () => {
             delay: 2500,
             disableOnInteraction: false,
           }}
+          
           centeredSlidesBounds={true}
           coverflowEffect={{
             rotate: 20,
             stretch: 0,
-            depth: 50,
+            depth: 0,
             modifier: 3.5,
             slideShadows: true,
           }}
           pagination={{
             clickable: true,
           }}
-          onPaginationShow={false}
-          modules={[EffectCoverflow, Pagination]}
+          modules={[EffectCoverflow, Pagination, Autoplay]}
           className="mySwiper">
           {customers.map((customer) => (
             <SwiperSlide key={customer.id}>
@@ -56,7 +56,7 @@ const HomeOurCustomers = () => {
             </SwiperSlide>
           ))}
         </Swiper>
-      </center>
+      </div>
     </div>
   );
 };

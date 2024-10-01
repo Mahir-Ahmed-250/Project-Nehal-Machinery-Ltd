@@ -40,9 +40,11 @@
 .bannerText {
     font-size: 90px;
 }
+.react-multiple-carousel__arrow {
 
+}
 
-@media screen and (max-width: 1300px) {
+@media screen and (max-width: 768px) {
     .bannerText {
         font-size: 30px;
         margin-top: 150px;
@@ -50,5 +52,9 @@
 
     .companyName {
         font-size: 22px !important;
+    }
+
+    .bannerImg{
+        height: 450px;
     }
 }
