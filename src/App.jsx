@@ -6,6 +6,7 @@ import Footer from "./Components/Footer/Footer";
 import WhatsApp from "./Components/WhatsApp/WhatsApp";
 import Scroll from "./Components/Scroll/Scroll";
 import MessageFromChairMan from "./Pages/Messages/MessageFromChairMan/MessageFromChairMan";
+import MessagesFromMD from "./Pages/Messages/MessageFromMD/MessagesFromMD";
 
 function App() {
   return (
@@ -14,11 +15,12 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/home" element={<Home />} />
-        <Route path="/chairman" element={<MessageFromChairMan/>} />
+        <Route path="/chairman" element={<MessageFromChairMan />} />
+        <Route path="/md" element={<MessagesFromMD />} />
       </Routes>
-      <WhatsApp/>
-      <Scroll/>
-      <Footer/>
+      <WhatsApp />
+      <Scroll />
+      <Footer />
     </>
   );
 }

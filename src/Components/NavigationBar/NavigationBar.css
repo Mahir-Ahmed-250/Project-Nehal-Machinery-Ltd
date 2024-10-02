@@ -6,9 +6,15 @@
 .navbar {
   background-color: rgb(241, 241, 241);
 }
-.nav-link{
+
+.nav-link {
   font-size: 19px !important;
 }
+
+.dropdown-menu {
+  margin-top: -20px !important;
+}
+
 .dropdown:hover>.dropdown-menu,
 .dropend:hover>.dropdown-menu {
   display: block;
