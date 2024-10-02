@@ -8,7 +8,7 @@ const NavigationBar = () => {
   return (
     <>
       <nav className="navbar navbar-expand-lg sticky-top">
-        <div className="container">
+     
           <Link className="navbar-brand companyNameAndLogo" to="/">
             <div>
               <img src={logo} height="60" width="60" alt="logo" />
@@ -149,15 +149,6 @@ const NavigationBar = () => {
                 </ul>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/agents">
-                  Agents
-                </Link>
-              </li>
-
-
-
-
-              <li className="nav-item">
                 <Link className="nav-link" to="/blog">
                   Blog
                 </Link>
@@ -170,7 +161,7 @@ const NavigationBar = () => {
              
             </ul>
           </div>
-        </div>
+       
       </nav>
     </>
   );
