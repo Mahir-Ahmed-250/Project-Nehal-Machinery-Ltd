@@ -91,11 +91,11 @@ const Footer = () => {
                   saiful@nehalml.com
                 </a>
               </div>
-             <center>
-            
-             </center>
+       
             </div>
           </div>
+          <br />
+          <br />
         </div>
       </>
     );

@@ -37,23 +37,22 @@ const NavigationBar = () => {
                   Home <span className="sr-only"></span>
                 </Link>
               </li>
-              <li className="nav-item dropdown">
-                <Link
+              <li className="dropdown">
+                <p
                   className="nav-link dropdown-toggle"
-                  to="/products"
                   role="button"
                   data-bs-toggle="dropdown"
                   aria-expanded="false">
                   Messages
-                </Link>
+                </p>
                 <ul className="dropdown-menu">
                   <li>
-                    <Link className="dropdown-item" href="#">
+                    <Link className="dropdown-item" to="/chairman">
                       Message from Chairman
                     </Link>
                   </li>
                   <li>
-                    <Link className="dropdown-item" href="#">
+                    <Link className="dropdown-item" to="/md">
                      Message from Managing Director
                     </Link>
                   </li>

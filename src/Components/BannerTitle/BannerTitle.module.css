@@ -1,0 +1,15 @@
+.title {
+    font-weight: 700;
+    font-size: 120px;
+    text-shadow: 4px 4px 4px #f8f6f6;
+    text-align: center;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+@media screen and (max-width: 768px) {
+    .title {
+        font-size: 30px; 
+    }
+}
