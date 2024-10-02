@@ -37,11 +37,34 @@ const NavigationBar = () => {
                   Home <span className="sr-only"></span>
                 </Link>
               </li>
+              <li className="nav-item dropdown">
+                <Link
+                  className="nav-link dropdown-toggle"
+                  to="/products"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false">
+                  Messages
+                </Link>
+                <ul className="dropdown-menu">
+                  <li>
+                    <Link className="dropdown-item" href="#">
+                      Message from Chairman
+                    </Link>
+                  </li>
+                  <li>
+                    <Link className="dropdown-item" href="#">
+                     Message from Managing Director
+                    </Link>
+                  </li>
+                </ul>
+              </li>
               <li className="nav-item">
                 <Link className="nav-link" to="/about">
                   About Us
                 </Link>
               </li>
+             
               <li className="nav-item dropdown">
                 <Link
                   className="nav-link dropdown-toggle"
@@ -123,31 +146,7 @@ const NavigationBar = () => {
                 </Link>
               </li>
 
-              <li className="nav-item dropdown">
-                <Link
-                  className="nav-link dropdown-toggle"
-                  to="/products"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false">
-                  Messages
-                </Link>
-                <ul className="dropdown-menu">
-                  <li>
-                    <Link className="dropdown-item" href="#">
-                      Message from Chairman
-                    </Link>
-                  </li>
-                  <li>
-                    <Link className="dropdown-item" href="#">
-                     Message from Managing Director
-                    </Link>
-                  </li>
-                
-                  
-               
-                </ul>
-              </li>
+          
               <li className="nav-item">
                 <Link className="nav-link" to="/blog">
                   Blog
