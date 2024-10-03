@@ -11,10 +11,6 @@
   font-size: 19px !important;
 }
 
-.dropdown-menu {
-  margin-top: -20px !important;
-}
-
 .dropdown:hover>.dropdown-menu,
 .dropend:hover>.dropdown-menu {
   display: block;

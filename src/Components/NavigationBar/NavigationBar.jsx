@@ -9,7 +9,7 @@ const NavigationBar = () => {
     <>
       <nav className="navbar navbar-expand-lg sticky-top">
      
-          <Link className="navbar-brand companyNameAndLogo" to="/">
+          <Link className="navbar-brand companyNameAndLogo ms-4" to="/">
             <div>
               <img src={logo} height="60" width="60" alt="logo" />
             </div>
@@ -29,7 +29,7 @@ const NavigationBar = () => {
             <RiMenu3Fill onClick={() => setIsActive(!isActive)} />
           </button>
           <div
-            className="collapse navbar-collapse navbarItems"
+            className="collapse navbar-collapse navbarItems me-4"
             id="navbarNavDropdown">
             <ul className="navbar-nav ">
               <li className="nav-item">
@@ -37,7 +37,7 @@ const NavigationBar = () => {
                   Home <span className="sr-only"></span>
                 </Link>
               </li>
-              <li className="dropdown">
+              {/* <li className="dropdown">
                 <p
                   className="nav-link dropdown-toggle"
                   role="button"
@@ -57,7 +57,7 @@ const NavigationBar = () => {
                     </Link>
                   </li>
                 </ul>
-              </li>
+              </li> */}
               <li className="nav-item">
                 <Link className="nav-link" to="/about">
                   About Us
