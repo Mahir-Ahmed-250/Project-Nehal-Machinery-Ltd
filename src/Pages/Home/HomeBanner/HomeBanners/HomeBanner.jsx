@@ -97,7 +97,7 @@ const HomeBanner = () => {
             Welcome To The <br />
             Company
           </h2>
-          <Button title="Watch More" width="350px" color="#000" border="2px solid"/>
+          <Button title="Watch More" width="350px" color="#000" border="2px solid"  fontSize="40px"/>
          
         </center>
       </div>

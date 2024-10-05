@@ -1,10 +1,10 @@
 import React from 'react';
 import styles from "./Button.module.css";
 
-const Button = ({title, width, border, color}) => {
+const Button = ({title, width, border, color,fontSize, onClick}) => {
     return (
         <>
-              <button className={styles.btn} style={{width:`${width}`, border:`${border}`, color:`${color}`}}>{title}</button>
+              <button onClick={onClick} className={styles.btn} style={{width:`${width}`, border:`${border}`, color:`${color}`, fontSize:`${fontSize}`}}>{title}</button>
         </>
     );
 };

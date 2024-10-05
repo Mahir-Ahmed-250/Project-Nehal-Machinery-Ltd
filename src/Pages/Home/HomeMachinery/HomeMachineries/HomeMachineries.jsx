@@ -28,6 +28,7 @@ const HomeMachineries = () => {
                   width="300px"
                   border="2px solid black"
                   color="black"
+                   fontSize="30px"
                 />
               </Link>
             </div>

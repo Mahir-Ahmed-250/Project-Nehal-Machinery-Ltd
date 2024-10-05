@@ -8,7 +8,8 @@ import Scroll from "./Components/Scroll/Scroll";
 import AboutUs from "./Pages/AboutUs/AboutUs";
 import { useLayoutEffect } from "react";
 import ContactUs from "./Pages/ContactUs/ContactUs";
-import Blog from "./Pages/Blog/Blog";
+import Blog from "./Pages/Blog/Blogs/Blog";
+
 
 
 function App() {

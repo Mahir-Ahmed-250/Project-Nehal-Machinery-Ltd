@@ -1,7 +1,6 @@
 .btn {
     border: 3px solid;
     background: none;
-    font-size: 30px;
     font-weight: 700;
     margin-top: 20px;
     letter-spacing: 3px;
@@ -9,6 +8,7 @@
     background-size: 200% 100%;
     background-position: right bottom;
     transition: all .5s ease-in-out;
+   font-family: fantasy;
 }
 
 .btn:hover {
