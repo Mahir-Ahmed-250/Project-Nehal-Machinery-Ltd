@@ -1,6 +1,11 @@
 .aboutUsBannerContainer {
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), url('../../Assets/Chairman.png');
+    background: linear-gradient(rgba(110, 110, 110, 0.7), rgba(0, 0, 0, 0.5)), url('../../Assets/AboutBg.jpg');
     background-attachment: fixed;
     background-size: cover;
     height: 70vh;
+}
+.aboutUs{
+    text-align:justify;
+    padding-top: 50px;
+    padding-bottom: 50px;
 }
