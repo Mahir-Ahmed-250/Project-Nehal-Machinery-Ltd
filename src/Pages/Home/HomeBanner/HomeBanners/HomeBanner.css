@@ -40,9 +40,6 @@
 .bannerText {
     font-size: 90px;
 }
-.react-multiple-carousel__arrow {
-
-}
 
 @media screen and (max-width: 768px) {
     .bannerText {
@@ -54,7 +51,7 @@
         font-size: 22px !important;
     }
 
-    .bannerImg{
+    .bannerImg {
         height: 450px;
     }
 }
