@@ -36,7 +36,6 @@ const HomeOurCustomers = () => {
             delay: 2500,
             disableOnInteraction: false,
           }}
-          
           centeredSlidesBounds={true}
           coverflowEffect={{
             rotate: 20,

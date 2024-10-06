@@ -1,8 +1,9 @@
 import { useState } from "react";
 import Button from "../../../Components/Button/Button";
+import { Link } from "react-router-dom";
 
 const SingleBlog = ({ post }) => {
-  const { title, image, description } = post;
+  const { id, name, img, description } = post;
   const [showFullDescription, setFullDescription] = useState(false);
   const showFullDescriptionHandler = () => {
     setFullDescription(!showFullDescription);
@@ -21,9 +22,9 @@ const SingleBlog = ({ post }) => {
         data-aos-delay="50"
         data-aos-duration="1000">
         <div className="card">
-          <img src={image} className="card-img-top" alt="postsImage" />
+          <img src={img} className="card-img-top" alt="postsImage" />
           <div className="card-body" style={{ backgroundColor: "#f4f4f4" }}>
-            <h5 className="card-title blog-title">{title}</h5>
+            <h5 className="card-title blog-title">{name}</h5>
             <h6 className="blog-post-description">
               {postDescription}
               <span
@@ -35,13 +36,15 @@ const SingleBlog = ({ post }) => {
                 {showFullDescription ? "  Show Less" : "  ...Show More"}
               </span>
             </h6>
-            <Button
-              title="Read More"
-              width="200px"
-              border="2px solid black"
-              color="black"
-              fontSize="20px"
-            />
+            <Link to={`/blog/${id}`}>
+              <Button
+                title="Read More"
+                width="200px"
+                border="2px solid black"
+                color="black"
+                fontSize="20px"
+              />
+            </Link>
           </div>
         </div>
       </div>

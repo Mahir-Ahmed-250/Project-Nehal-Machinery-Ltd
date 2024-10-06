@@ -23,7 +23,9 @@ const Blog = () => {
     setTimeout(scrollToTop, 0);
   };
   useEffect(() => {
-    fetch("Blogs.JSON")
+    fetch(
+      "https://raw.githubusercontent.com/Mahir-Ahmed-250/API/gh-pages/Data.json"
+    )
       .then((res) => res.json())
       .then((data) => setPosts(data));
   }, []);

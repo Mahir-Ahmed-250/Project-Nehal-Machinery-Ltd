@@ -9,8 +9,7 @@ import AboutUs from "./Pages/AboutUs/AboutUs";
 import { useLayoutEffect } from "react";
 import ContactUs from "./Pages/ContactUs/ContactUs";
 import Blog from "./Pages/Blog/Blogs/Blog";
-
-
+import DetailsBlog from "./Pages/Blog/DetailsBlog/DetailsBlog";
 
 function App() {
   const Wrapper = ({ children }) => {
@@ -18,23 +17,24 @@ function App() {
     useLayoutEffect(() => {
       document.documentElement.scrollTo(0, 0);
     }, [location.pathname]);
-    return children
-  }
-  
+    return children;
+  };
+
   return (
     <>
-     <Wrapper>
-      <NavigationBar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/home" element={<Home />} />
-        <Route path="/about" element={<AboutUs />} />
-        <Route path ='/contact' element={<ContactUs/>}/>
-        <Route path ='/blog' element={<Blog/>}/>
-      </Routes>
-      <WhatsApp />
-      <Scroll />
-      <Footer />
+      <Wrapper>
+        <NavigationBar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/about" element={<AboutUs />} />
+          <Route path="/contact" element={<ContactUs />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/:id" element={<DetailsBlog />} />
+        </Routes>
+        <WhatsApp />
+        <Scroll />
+        <Footer />
       </Wrapper>
     </>
   );
