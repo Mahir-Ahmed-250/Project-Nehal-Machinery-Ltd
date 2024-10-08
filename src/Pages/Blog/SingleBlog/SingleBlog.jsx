@@ -16,15 +16,15 @@ const SingleBlog = ({ post }) => {
   return (
     <>
       <div
-        className="col-md-6 col-lg-4 mt-4 mb-4"
+        className="col-md-6 col-lg-4 mt-4 mb-4 "
         data-aos="fade-in"
         data-aos-offset="200"
         data-aos-delay="50"
         data-aos-duration="1000">
         <div className="card">
-          <img src={img} className="card-img-top" alt="postsImage" />
-          <div className="card-body" style={{ backgroundColor: "#f4f4f4" }}>
-            <h5 className="card-title blog-title">{name}</h5>
+          <img src={img}  alt="postsImage" />
+          <div className="card-body " style={{ backgroundColor: "#f4f4f4" }}>
+            <h3 className="card-title blog-title">{name}</h3>
             <h6 className="blog-post-description">
               {postDescription}
               <span
@@ -36,7 +36,8 @@ const SingleBlog = ({ post }) => {
                 {showFullDescription ? "  Show Less" : "  ...Show More"}
               </span>
             </h6>
-            <Link to={`/blog/${id}`}>
+        <div className="mt-auto">
+        <Link to={`/blog/${id}`}  >
               <Button
                 title="Read More"
                 width="200px"
@@ -45,6 +46,9 @@ const SingleBlog = ({ post }) => {
                 fontSize="20px"
               />
             </Link>
+        </div>
+          
+
           </div>
         </div>
       </div>
