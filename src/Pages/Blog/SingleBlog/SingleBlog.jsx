@@ -22,7 +22,7 @@ const SingleBlog = ({ post }) => {
         data-aos-delay="50"
         data-aos-duration="1000">
         <div className="card">
-          <img src={img}  alt="postsImage" />
+          <img src={img} alt="postsImage" />
           <div className="card-body " style={{ backgroundColor: "#f4f4f4" }}>
             <h3 className="card-title blog-title">{name}</h3>
             <h6 className="blog-post-description">
@@ -36,19 +36,17 @@ const SingleBlog = ({ post }) => {
                 {showFullDescription ? "  Show Less" : "  ...Show More"}
               </span>
             </h6>
-        <div className="mt-auto">
-        <Link to={`/blog/${id}`}  >
-              <Button
-                title="Read More"
-                width="200px"
-                border="2px solid black"
-                color="black"
-                fontSize="20px"
-              />
-            </Link>
-        </div>
-          
-
+            <div className="mt-auto">
+              <Link to={`/blog/${id}`}>
+                <Button
+                  title="Read More"
+                  width="200px"
+                  border="2px solid black"
+                  color="black"
+                  fontSize="20px"
+                />
+              </Link>
+            </div>
           </div>
         </div>
       </div>

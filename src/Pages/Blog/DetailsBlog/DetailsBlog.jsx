@@ -4,27 +4,25 @@ import BannerTitle from "../../../Components/BannerTitle/BannerTitle";
 import Carousel from "react-multi-carousel";
 import Button from "../../../Components/Button/Button";
 
-
 const DetailsBlog = () => {
   const { id } = useParams();
   const [blogs, setBlogs] = useState([]);
   const [singleBlog, setSingleBlog] = useState({});
   const ID = parseInt(id);
 
-  
   useEffect(() => {
     fetch(
       "https://raw.githubusercontent.com/Mahir-Ahmed-250/API/gh-pages/Data.json"
     )
       .then((res) => res.json())
       .then((data) => setBlogs(data));
-  },[]);
+  }, []);
 
   useEffect(() => {
     const foundService = blogs.find((service) => service.id === ID);
     setSingleBlog(foundService);
   }, [ID, blogs]);
- 
+
   return (
     <>
       <div className="blogBannerContainer">
@@ -37,14 +35,23 @@ const DetailsBlog = () => {
         <div className="row">
           <div className="col-lg-6  animate__animated animate__fadeInLeft">
             <img
-              style={{ width: "100%" }}
+              style={{ width: "100%", borderRadius: "20px" }}
               variant="top"
               src={singleBlog?.img}
               alt=""
             />
           </div>
           <div className="col-lg-6 mt-3">
-            <h1 className="treatment"> {singleBlog?.name}</h1>
+            <h1
+              style={{
+                fontSize: "55px",
+                marginTop: "20px",
+                fontWeight: "bold",
+              }}
+              className="treatment">
+              {" "}
+              {singleBlog?.name}
+            </h1>
             <h6 className="price">Price: ${singleBlog?.price}</h6>
             <p>{singleBlog?.description}</p>
             <h6 className="doctor">
@@ -54,12 +61,18 @@ const DetailsBlog = () => {
         </div>
       </div>
       <div className="container">
-        <h2 style={{fontSize:"45px", marginTop:"20px",fontWeight:"bold"}}>Read More</h2>
+        <h2
+          style={{
+            fontSize: "55px",
+            marginTop: "20px",
+            fontWeight: "bold",
+          }}>
+          Related Blogs
+        </h2>
         <Carousel
           additionalTransfrom={0}
-          arrows
           autoPlay
-          autoPlaySpeed={1000}
+          autoPlaySpeed={3000}
           className=""
           containerClass="container-with-dots"
           dotListClass=""
@@ -69,7 +82,7 @@ const DetailsBlog = () => {
           itemClass=""
           keyBoardControl
           minimumTouchDrag={80}
-          pauseOnHover={false}
+          pauseOnHover={true}
           renderArrowsWhenDisabled={false}
           renderButtonGroupOutside={false}
           renderDotsOutside={false}
@@ -106,30 +119,24 @@ const DetailsBlog = () => {
           showDots={false}
           sliderClass=""
           slidesToSlide={1}
-          swipeable
-        >
+          swipeable>
           {blogs.map((blog) => (
             <div key={blog.id}>
-              <div className="row">
-
-                <div className="card mb-5 mt-3">
+              <div className="card p-3 me-4 mb-5">
                 <img src={blog.img} className="bannerImg h-100" alt="" />
                 <h3 className="ms-3 mt-3">{blog.name}</h3>
                 <div className="mt-auto ms-3 mb-3">
                   <Link to={`/blog/${blog.id}`}>
                     <Button
-                      title="Read More"
-                      width="200px"
+                      title="Read This Blog"
+                      width="250px"
                       border="2px solid black"
                       color="black"
                       fontSize="20px"
                     />
                   </Link>
                 </div>
-    
-                </div>
               </div>
-             
             </div>
           ))}
         </Carousel>
