@@ -4,11 +4,11 @@
     font-weight: 700;
     margin-top: 20px;
     letter-spacing: 3px;
-    background: linear-gradient(to left, #ffffff 50%, #fff01a 50%);
+    background: linear-gradient(to left, #ffffff 50%, #ccccc7 50%);
     background-size: 200% 100%;
     background-position: right bottom;
     transition: all .5s ease-in-out;
-   font-family: fantasy;
+    font-family: fantasy;
 }
 
 .btn:hover {
