@@ -10,6 +10,8 @@ import { useLayoutEffect } from "react";
 import ContactUs from "./Pages/ContactUs/ContactUs";
 import Blog from "./Pages/Blog/Blogs/Blog";
 import DetailsBlog from "./Pages/Blog/DetailsBlog/DetailsBlog";
+import Shop from "./Pages/Shop/Shop";
+import Agents from "./Pages/Agents/Agents";
 
 function App() {
   const Wrapper = ({ children }) => {
@@ -31,6 +33,8 @@ function App() {
           <Route path="/contact" element={<ContactUs />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:id" element={<DetailsBlog />} />
+          <Route path="/shop" element={<Shop />} />
+          <Route path="/agents" element={<Agents />} />
         </Routes>
         <WhatsApp />
         <Scroll />

@@ -16,12 +16,12 @@ const SingleBlog = ({ post }) => {
   return (
     <>
       <div
-        className="col-md-6 col-lg-4 mt-4 mb-4 "
+        className="col-md-6 col-lg-4 mt-4 mb-4"
         data-aos="fade-in"
         data-aos-offset="200"
         data-aos-delay="50"
         data-aos-duration="1000">
-        <div className="card">
+        <div className="card h-100">
           <img src={img} alt="postsImage" />
           <div className="card-body " style={{ backgroundColor: "#f4f4f4" }}>
             <h3 className="card-title blog-title">{name}</h3>
