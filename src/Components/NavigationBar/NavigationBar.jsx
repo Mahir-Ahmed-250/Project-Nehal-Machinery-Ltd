@@ -66,7 +66,6 @@ const NavigationBar = () => {
             <li className="nav-item dropdown">
               <Link
                 className="nav-link dropdown-toggle"
-                to="/products"
                 role="button"
                 data-bs-toggle="dropdown"
                 aria-expanded="false">
