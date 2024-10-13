@@ -1,13 +1,13 @@
 import React from "react";
 import BannerTitle from "../../Components/BannerTitle/BannerTitle";
-import "./Agents.css";
+import "./Affiliate.css";
 import img from "../../Assets/commingSoon.jpg";
 
-const Agents = () => {
+const Affiliate = () => {
   return (
     <>
-      <div className="agentsBannerContainer">
-        <BannerTitle title1="Agents" title2="Nehal Machinery Ltd" />
+      <div className="affiliateBannerContainer">
+        <BannerTitle title1="Affiliate" title2="Nehal Machinery Ltd" />
       </div>
       <center>
         <img src={img} alt="" style={{ height: "100vh", width: "100%" }} />
@@ -16,4 +16,4 @@ const Agents = () => {
   );
 };
 
-export default Agents;
+export default Affiliate;

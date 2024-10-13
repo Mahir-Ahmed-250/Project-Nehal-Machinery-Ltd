@@ -88,8 +88,8 @@ const NavigationBar = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link className="dropdown-item" to="/commission">
-                    Installation Commission
+                  <Link className="dropdown-item" to="/erection">
+                  Erection
                   </Link>
                 </li>
                 <li>
@@ -131,8 +131,8 @@ const NavigationBar = () => {
               </ul>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/agents">
-                Agents
+              <Link className="nav-link" to="/affiliate">
+              Affiliate
               </Link>
             </li>
             <li className="nav-item">

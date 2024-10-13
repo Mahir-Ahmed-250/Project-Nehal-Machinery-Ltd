@@ -11,7 +11,9 @@ import ContactUs from "./Pages/ContactUs/ContactUs";
 import Blog from "./Pages/Blog/Blogs/Blog";
 import DetailsBlog from "./Pages/Blog/DetailsBlog/DetailsBlog";
 import Shop from "./Pages/Shop/Shop";
-import Agents from "./Pages/Agents/Agents";
+import Affiliate from "./Pages/Agents/Affiliate";
+import Machineries from "./Pages/ProductsAndServices/Machineries/Machineries/Machineries";
+
 
 function App() {
   const Wrapper = ({ children }) => {
@@ -30,11 +32,12 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
           <Route path="/about" element={<AboutUs />} />
-          <Route path="/contact" element={<ContactUs />} />
+          <Route path="/machineries" element={<Machineries />} />
+          <Route path="/affiliate" element={<Affiliate />} />
+          <Route path="/shop" element={<Shop />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:id" element={<DetailsBlog />} />
-          <Route path="/shop" element={<Shop />} />
-          <Route path="/agents" element={<Agents />} />
+          <Route path="/contact" element={<ContactUs />} />
         </Routes>
         <WhatsApp />
         <Scroll />
