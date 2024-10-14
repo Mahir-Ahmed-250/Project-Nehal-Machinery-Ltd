@@ -13,7 +13,7 @@ import DetailsBlog from "./Pages/Blog/DetailsBlog/DetailsBlog";
 import Shop from "./Pages/Shop/Shop";
 import Affiliate from "./Pages/Agents/Affiliate";
 import Machineries from "./Pages/ProductsAndServices/Machineries/Machineries/Machineries";
-
+import DetailsMachinery from "./Pages/ProductsAndServices/Machineries/DetailsMachinery/DetailsMachinery";
 
 function App() {
   const Wrapper = ({ children }) => {
@@ -33,6 +33,7 @@ function App() {
           <Route path="/home" element={<Home />} />
           <Route path="/about" element={<AboutUs />} />
           <Route path="/machineries" element={<Machineries />} />
+          <Route path="/machineries/:id" element={<DetailsMachinery />} />
           <Route path="/affiliate" element={<Affiliate />} />
           <Route path="/shop" element={<Shop />} />
           <Route path="/blog" element={<Blog />} />
