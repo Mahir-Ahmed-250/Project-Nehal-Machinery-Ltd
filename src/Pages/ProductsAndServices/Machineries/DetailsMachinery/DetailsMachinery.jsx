@@ -6,20 +6,20 @@ import Carousel from "react-multi-carousel";
 
 const DetailsMachinery = () => {
   const { id } = useParams();
-  const [blogs, setBlogs] = useState([]);
+  const [machineries, setMachineries] = useState([]);
   const [singleMachinery, setSingleMachinery] = useState({});
   const ID = parseInt(id);
 
   useEffect(() => {
     fetch("https://fakestoreapi.com/products/")
       .then((res) => res.json())
-      .then((data) => setBlogs(data));
+      .then((data) => setMachineries(data));
   }, []);
 
   useEffect(() => {
-    const foundService = blogs.find((service) => service.id === ID);
+    const foundService = machineries.find((service) => service.id === ID);
     setSingleMachinery(foundService);
-  }, [ID, blogs]);
+  }, [ID, machineries]);
   return (
     <>
       <div className="machineryBannerContainer">
@@ -45,8 +45,7 @@ const DetailsMachinery = () => {
                 marginTop: "20px",
                 fontWeight: "bold",
               }}
-              className="treatment"
-            >
+              className="treatment">
               {" "}
               {singleMachinery?.name}
             </h1>
@@ -64,8 +63,7 @@ const DetailsMachinery = () => {
             fontSize: "55px",
             marginTop: "20px",
             fontWeight: "bold",
-          }}
-        >
+          }}>
           Related Machinery
         </h2>
         <Carousel
@@ -118,26 +116,30 @@ const DetailsMachinery = () => {
           showDots={false}
           sliderClass=""
           slidesToSlide={1}
-          swipeable
-        >
-          {blogs
+          swipeable>
+          {machineries
             .filter((machinery) => machinery.category === "jewelery")
-            .map((blog) => (
-              <div key={blog.id}>
-                <div className="card  p-3 me-4 mb-5">
-                  <img src={blog.image} className="bannerImg" alt="" />
-                  <h3 className="ms-3 mt-3">{blog.name}</h3>
-                  <div className="mt-auto ms-3 mb-3">
-                    <Link to={`/machineries/${blog.id}`}>
-                      <Button
-                        title="Read This Blog"
-                        width="250px"
-                        border="2px solid black"
-                        color="black"
-                        fontSize="20px"
-                      />
-                    </Link>
-                  </div>
+            .map((machinery) => (
+              <div key={machinery.id}>
+                <div className="card h-100 p-3 me-4 mb-5">
+                  <img
+                    src={machinery.image}
+                    alt=""
+                    style={{ height: "300px" }}
+                  />
+                  <h6 className="mt-3">
+                    {`${machinery.title}`.slice(0, 12)}....
+                  </h6>
+
+                  <Link to={`/machineries/${machinery.id}`}>
+                    <Button
+                      title="Details"
+                      width="250px"
+                      border="2px solid black"
+                      color="black"
+                      fontSize="20px"
+                    />
+                  </Link>
                 </div>
               </div>
             ))}
