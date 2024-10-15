@@ -45,7 +45,8 @@ const DetailsMachinery = () => {
                 marginTop: "20px",
                 fontWeight: "bold",
               }}
-              className="treatment">
+              className="treatment"
+            >
               {" "}
               {singleMachinery?.name}
             </h1>
@@ -63,8 +64,9 @@ const DetailsMachinery = () => {
             fontSize: "55px",
             marginTop: "20px",
             fontWeight: "bold",
-          }}>
-          Related Blogs
+          }}
+        >
+          Related Machinery
         </h2>
         <Carousel
           additionalTransfrom={0}
@@ -116,26 +118,29 @@ const DetailsMachinery = () => {
           showDots={false}
           sliderClass=""
           slidesToSlide={1}
-          swipeable>
-          {blogs.map((blog) => (
-            <div key={blog.id}>
-              <div className="card p-3 me-4 mb-5">
-                <img src={blog.image} className="bannerImg h-100" alt="" />
-                <h3 className="ms-3 mt-3">{blog.name}</h3>
-                <div className="mt-auto ms-3 mb-3">
-                  <Link to={`/machineries/${blog.id}`}>
-                    <Button
-                      title="Read This Blog"
-                      width="250px"
-                      border="2px solid black"
-                      color="black"
-                      fontSize="20px"
-                    />
-                  </Link>
+          swipeable
+        >
+          {blogs
+            .filter((machinery) => machinery.category === "jewelery")
+            .map((blog) => (
+              <div key={blog.id}>
+                <div className="card  p-3 me-4 mb-5">
+                  <img src={blog.image} className="bannerImg" alt="" />
+                  <h3 className="ms-3 mt-3">{blog.name}</h3>
+                  <div className="mt-auto ms-3 mb-3">
+                    <Link to={`/machineries/${blog.id}`}>
+                      <Button
+                        title="Read This Blog"
+                        width="250px"
+                        border="2px solid black"
+                        color="black"
+                        fontSize="20px"
+                      />
+                    </Link>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
         </Carousel>
       </div>
     </>
