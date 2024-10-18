@@ -10,7 +10,8 @@ import { useLayoutEffect } from "react";
 import ContactUs from "./Pages/ContactUs/ContactUs";
 import Blog from "./Pages/Blog/Blogs/Blog";
 import DetailsBlog from "./Pages/Blog/DetailsBlog/DetailsBlog";
-import Shop from "./Pages/Shop/Shop";
+import Shop from "./Pages/Shop/Shop/Shop";
+import DetailsShop from "./Pages/Shop/DetailsShop/DetailsShop";
 import Affiliate from "./Pages/Agents/Affiliate";
 import Machineries from "./Pages/ProductsAndServices/Machineries/Machineries/Machineries";
 import DetailsMachinery from "./Pages/ProductsAndServices/Machineries/DetailsMachinery/DetailsMachinery";
@@ -40,6 +41,7 @@ function App() {
           <Route path="/molds/:id" element={<DetailsMold />} />
           <Route path="/affiliate" element={<Affiliate />} />
           <Route path="/shop" element={<Shop />} />
+          <Route path="/shop/:id" element={<DetailsShop />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:id" element={<DetailsBlog />} />
           <Route path="/contact" element={<ContactUs />} />
