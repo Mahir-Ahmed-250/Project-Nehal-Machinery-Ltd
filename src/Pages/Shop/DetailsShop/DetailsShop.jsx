@@ -22,7 +22,7 @@ const DetailsShop = () => {
   }, [ID, shops]);
   return (
     <>
-      <div className="machineryBannerContainer">
+      <div className="shopBannerContainer">
         <BannerTitle
           title1={`${singleShop?.title}`}
           title2="Nehal Machinery Ltd"
