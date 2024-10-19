@@ -49,11 +49,8 @@ const DetailsMold = () => {
               {" "}
               {singleMold?.name}
             </h1>
-            <h6 className="price">Price: ${singleMold?.price}</h6>
+
             <p>{singleMold?.description}</p>
-            <h6 className="doctor">
-              Specialized Doctor : {singleMold?.doctor}
-            </h6>
           </div>
         </div>
       </div>

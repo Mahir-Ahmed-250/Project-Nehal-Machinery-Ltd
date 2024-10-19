@@ -49,11 +49,8 @@ const DetailsShop = () => {
               {" "}
               {singleShop?.name}
             </h1>
-            <h6 className="price">Price: ${singleShop?.price}</h6>
+
             <p>{singleShop?.description}</p>
-            <h6 className="doctor">
-              Specialized Doctor : {singleShop?.doctor}
-            </h6>
           </div>
         </div>
       </div>
