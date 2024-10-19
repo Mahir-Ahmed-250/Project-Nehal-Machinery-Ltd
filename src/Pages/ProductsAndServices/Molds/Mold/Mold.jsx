@@ -7,7 +7,7 @@ const Mold = ({ mold }) => {
   return (
     <>
       <div
-        className="col-md-6 col-lg-4 mt-4 mb-4 "
+        className="col-lg-6 mt-4 mb-4 "
         data-aos="fade-in"
         data-aos-offset="200"
         data-aos-delay="50"
