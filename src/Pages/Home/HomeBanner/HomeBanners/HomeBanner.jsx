@@ -96,7 +96,7 @@ const HomeBanner = () => {
           <Link to="/machineries">
             <Button
               title="Watch More"
-              width="450px"
+              width="300px"
               color="#000"
               border="2px solid"
               fontSize="40px"
