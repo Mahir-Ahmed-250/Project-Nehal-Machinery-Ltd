@@ -8,13 +8,13 @@ import "./HomeMachineries.css";
 const HomeMachineries = () => {
   const [products, setProducts] = useState([]);
   useEffect(() => {
-    fetch("HomeMachineries.JSON")
+    fetch("https://fakestoreapi.com/products/")
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, []);
   return (
     <div className="gg">
-      <Title title="Our Machinery" />
+      <Title title="Our Machineries" />
       <div className="container text-left">
         <div className="row mt-3" data-aos="fade-up" data-aos-duration="1000">
           {products.slice(0, 6).map((product) => (
@@ -22,13 +22,13 @@ const HomeMachineries = () => {
           ))}
           <div className="row mt-4">
             <div className="text-center">
-              <Link to="/products">
+              <Link to="/machineries">
                 <Button
                   title="Explore More"
                   width="300px"
                   border="2px solid black"
                   color="black"
-                   fontSize="30px"
+                  fontSize="30px"
                 />
               </Link>
             </div>
