@@ -1,17 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 .btn {
     border: 3px solid;
     background: none;
     font-weight: 700;
     margin-top: 20px;
     letter-spacing: 3px;
-    background: linear-gradient(to left, #ffffff 50%, #c2c24f 50%);
+    background: linear-gradient(to left, #ffffff 50%, #140f0f 50%);
     background-size: 200% 100%;
     background-position: right bottom;
     transition: all .5s ease-in-out;
-    font-family: fantasy;
+    font-family: "Kanit", sans-serif;
 }
 
 .btn:hover {
     background-position: left bottom;
     border: none;
+    color: #ffffff !important;
 }

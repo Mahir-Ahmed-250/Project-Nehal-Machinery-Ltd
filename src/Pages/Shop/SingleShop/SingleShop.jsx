@@ -12,7 +12,7 @@ const SingleShop = ({ shop }) => {
         data-aos-offset="200"
         data-aos-delay="50"
         data-aos-duration="1000">
-        <div className="card h-100 p-4">
+        <div className="card h-100 p-4 shadow" style={{ borderRadius: "8%" }}>
           <img src={image} alt="postsImage" style={{ height: "300px" }} />
           <div className="card-body ">
             <h5 className="card-title blog-title">{title}</h5>

@@ -23,16 +23,13 @@ const DetailsShop = () => {
   return (
     <>
       <div className="shopBannerContainer">
-        <BannerTitle
-          title1={`${singleShop?.title}`}
-          title2="Nehal Machinery Ltd"
-        />
+        <BannerTitle title1="Shop" title2="Nehal Machinery Ltd" />
       </div>
       <div className="container mt-5">
         <div className="row">
           <div className="col-lg-6  animate__animated animate__fadeInLeft">
             <img
-              style={{ width: "100%", borderRadius: "20px", height: "300px" }}
+              style={{ width: "100%", borderRadius: "20px", height: "600px" }}
               variant="top"
               src={singleShop?.image}
               alt=""
@@ -41,16 +38,21 @@ const DetailsShop = () => {
           <div className="col-lg-6 mt-3">
             <h1
               style={{
-                fontSize: "55px",
                 marginTop: "20px",
                 fontWeight: "bold",
-              }}
-              className="treatment">
+              }}>
               {" "}
-              {singleShop?.name}
+              {singleShop?.title}
             </h1>
-
-            <p>{singleShop?.description}</p>
+            <hr />
+            <p
+              style={{
+                fontSize: "32px",
+                marginTop: "20px",
+                textAlign: "left",
+              }}>
+              {singleShop?.description}
+            </p>
           </div>
         </div>
       </div>

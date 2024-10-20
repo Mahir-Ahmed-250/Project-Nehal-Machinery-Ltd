@@ -18,8 +18,7 @@ const HomeBanner = () => {
         style={{
           paddingBottom: "30px",
           position: "relative",
-        }}
-      >
+        }}>
         <Carousel
           additionalTransfrom={0}
           arrows={true}
@@ -68,8 +67,7 @@ const HomeBanner = () => {
           showDots
           sliderClass=""
           slidesToSlide={1}
-          swipeable
-        >
+          swipeable>
           {banners.map((banner) => (
             <div key={banner.id}>
               <img src={banner.image} className="bannerImg" alt="" />
@@ -98,7 +96,7 @@ const HomeBanner = () => {
           <Link to="/machineries">
             <Button
               title="Watch More"
-              width="350px"
+              width="450px"
               color="#000"
               border="2px solid"
               fontSize="40px"
