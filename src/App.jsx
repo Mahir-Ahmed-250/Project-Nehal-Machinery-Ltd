@@ -4,7 +4,6 @@ import NavigationBar from "./Components/NavigationBar/NavigationBar";
 import Home from "./Pages/Home/Home/Home";
 import Footer from "./Components/Footer/Footer";
 import WhatsApp from "./Components/WhatsApp/WhatsApp";
-import Scroll from "./Components/Scroll/Scroll";
 import AboutUs from "./Pages/AboutUs/AboutUs";
 import { useLayoutEffect } from "react";
 import ContactUs from "./Pages/ContactUs/ContactUs";
@@ -20,6 +19,7 @@ import DetailsMold from "./Pages/ProductsAndServices/Molds/DetailsMold/DetailsMo
 import RawMaterials from "./Pages/ProductsAndServices/RawMaterials/RawMaterials";
 import Erection from "./Pages/ProductsAndServices/Erection/Erection";
 import ConsultancyService from "./Pages/ProductsAndServices/ConsultancyService/ConsultancyService";
+// import Scroll from "./Components/Scroll/Scroll";
 
 function App() {
   const Wrapper = ({ children }) => {
@@ -54,7 +54,7 @@ function App() {
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
         <WhatsApp />
-        <Scroll />
+        {/* <Scroll /> */}
         <Footer />
       </Wrapper>
     </>

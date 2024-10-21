@@ -14,10 +14,10 @@ const WhatsApp = () => {
         allowClickAway
         notification
         notificationSound
-        buttonStyle={{
-          right: "auto",
-          marginLeft: "20px",
-        }}
+        // buttonStyle={{
+        //   right: "auto",
+        //   marginLeft: "20px",
+        // }}
         chatboxClassName="chat"
       />
     </>
