@@ -19,6 +19,7 @@ import DetailsMold from "./Pages/ProductsAndServices/Molds/DetailsMold/DetailsMo
 import RawMaterials from "./Pages/ProductsAndServices/RawMaterials/RawMaterials";
 import Erection from "./Pages/ProductsAndServices/Erection/Erection";
 import ConsultancyService from "./Pages/ProductsAndServices/ConsultancyService/ConsultancyService";
+import { Toaster } from "react-hot-toast";
 // import Scroll from "./Components/Scroll/Scroll";
 
 function App() {
@@ -55,6 +56,7 @@ function App() {
         </Routes>
         <WhatsApp />
         {/* <Scroll /> */}
+        <Toaster position="top-right" />
         <Footer />
       </Wrapper>
     </>
