@@ -21,6 +21,7 @@ import Erection from "./Pages/ProductsAndServices/Erection/Erection";
 import ConsultancyService from "./Pages/ProductsAndServices/ConsultancyService/ConsultancyService";
 import { Toaster } from "react-hot-toast";
 import Others from "./Pages/ProductsAndServices/Others/Others/Others";
+import DetailsOther from "./Pages/ProductsAndServices/Others/DetailsOther/DetailsOther";
 // import Scroll from "./Components/Scroll/Scroll";
 
 function App() {
@@ -48,6 +49,7 @@ function App() {
           <Route path="/erection" element={<Erection />} />
           <Route path="/consultancy" element={<ConsultancyService />} />
           <Route path="/others" element={<Others />} />
+          <Route path="/others/:id" element={<DetailsOther />} />
           <Route path="/affiliate" element={<Affiliate />} />
           <Route path="/shop" element={<Shop />} />
           <Route path="/shop/:id" element={<DetailsShop />} />

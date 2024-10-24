@@ -19,7 +19,7 @@ const Other = ({ mold }) => {
           </div>
 
           <div className="mx-auto mb-4">
-            <Link to={`/molds/${id}`}>
+            <Link to={`/others/${id}`}>
               <Button
                 title="Details"
                 width="200px"
