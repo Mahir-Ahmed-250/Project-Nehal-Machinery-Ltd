@@ -75,7 +75,6 @@ const DetailsOther = () => {
           draggable
           focusOnSelect={false}
           infinite
-      
           keyBoardControl
           minimumTouchDrag={80}
           pauseOnHover={true}
