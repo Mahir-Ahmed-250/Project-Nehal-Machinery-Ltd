@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import HomeReview from "../HomeReview/HomeReview";
 import Carousel from "react-multi-carousel";
-import "react-multi-carousel/lib/styles.css";
 import "./HomeReviews.css";
 import Title from "../../../../Components/Title/Title";
 import { Button, Form, Modal } from "react-bootstrap";

@@ -11,7 +11,7 @@ import Blog from "./Pages/Blog/Blogs/Blog";
 import DetailsBlog from "./Pages/Blog/DetailsBlog/DetailsBlog";
 import Shop from "./Pages/Shop/Shop/Shop";
 import DetailsShop from "./Pages/Shop/DetailsShop/DetailsShop";
-import Affiliate from "./Pages/Affiliate/Affiliate";
+import Affiliated from "./Pages/Affiliated/Affiliated";
 import Machineries from "./Pages/ProductsAndServices/Machineries/Machineries/Machineries";
 import DetailsMachinery from "./Pages/ProductsAndServices/Machineries/DetailsMachinery/DetailsMachinery";
 import Molds from "./Pages/ProductsAndServices/Molds/Molds/Molds";
@@ -23,7 +23,7 @@ import { Toaster } from "react-hot-toast";
 import Others from "./Pages/ProductsAndServices/Others/Others/Others";
 import DetailsOther from "./Pages/ProductsAndServices/Others/DetailsOther/DetailsOther";
 // import Scroll from "./Components/Scroll/Scroll";
-
+import "react-multi-carousel/lib/styles.css";
 function App() {
   const Wrapper = ({ children }) => {
     const location = useLocation();
@@ -50,7 +50,7 @@ function App() {
           <Route path="/consultancy" element={<ConsultancyService />} />
           <Route path="/others" element={<Others />} />
           <Route path="/others/:id" element={<DetailsOther />} />
-          <Route path="/affiliate" element={<Affiliate />} />
+          <Route path="/affiliated" element={<Affiliated />} />
           <Route path="/shop" element={<Shop />} />
           <Route path="/shop/:id" element={<DetailsShop />} />
           <Route path="/blog" element={<Blog />} />
