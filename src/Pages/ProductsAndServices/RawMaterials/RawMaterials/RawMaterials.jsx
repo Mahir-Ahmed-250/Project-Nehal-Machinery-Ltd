@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import BannerTitle from "../../../../Components/BannerTitle/BannerTitle";
-import Mold from "../Mold/Mold";
-import "./Molds.css";
+import "./RawMaterials.css";
+import RawMaterial from "../RawMaterial/RawMaterial";
 
-const Molds = () => {
+const RawMaterials = () => {
   const [molds, setMolds] = useState([]);
   useEffect(() => {
     fetch("https://fakestoreapi.com/products/")
@@ -13,15 +13,15 @@ const Molds = () => {
 
   return (
     <>
-      <div className="moldsBannerContainer">
-        <BannerTitle title1="Molds" title2="Nehal Machinery Ltd" />
+      <div className="rawMaterialsBannerContainer">
+        <BannerTitle title1="Raw Materials" title2="Nehal Machinery Ltd" />
       </div>
       <div className="container">
         <div className="row">
           {molds
-            .filter((mold) => mold.category === "electronics")
+            .filter((mold) => mold.category === "women's clothing")
             .map((mold) => (
-              <Mold key={mold.id} mold={mold} />
+              <RawMaterial key={mold.id} mold={mold} />
             ))}
         </div>
       </div>
@@ -29,4 +29,4 @@ const Molds = () => {
   );
 };
 
-export default Molds;
+export default RawMaterials;

@@ -16,7 +16,7 @@ import Machineries from "./Pages/ProductsAndServices/Machineries/Machineries/Mac
 import DetailsMachinery from "./Pages/ProductsAndServices/Machineries/DetailsMachinery/DetailsMachinery";
 import Molds from "./Pages/ProductsAndServices/Molds/Molds/Molds";
 import DetailsMold from "./Pages/ProductsAndServices/Molds/DetailsMold/DetailsMold";
-import RawMaterials from "./Pages/ProductsAndServices/RawMaterials/RawMaterials";
+import RawMaterials from "./Pages/ProductsAndServices/RawMaterials/RawMaterials/RawMaterials";
 import Erection from "./Pages/ProductsAndServices/Erection/Erection";
 import ConsultancyService from "./Pages/ProductsAndServices/ConsultancyService/ConsultancyService";
 import { Toaster } from "react-hot-toast";
@@ -24,6 +24,7 @@ import Others from "./Pages/ProductsAndServices/Others/Others/Others";
 import DetailsOther from "./Pages/ProductsAndServices/Others/DetailsOther/DetailsOther";
 // import Scroll from "./Components/Scroll/Scroll";
 import "react-multi-carousel/lib/styles.css";
+
 function App() {
   const Wrapper = ({ children }) => {
     const location = useLocation();

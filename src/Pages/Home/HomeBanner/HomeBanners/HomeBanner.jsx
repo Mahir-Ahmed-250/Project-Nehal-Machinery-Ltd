@@ -18,7 +18,8 @@ const HomeBanner = () => {
         style={{
           paddingBottom: "30px",
           position: "relative",
-        }}>
+        }}
+      >
         <Carousel
           additionalTransfrom={0}
           arrows={true}
@@ -67,7 +68,8 @@ const HomeBanner = () => {
           showDots
           sliderClass=""
           slidesToSlide={1}
-          swipeable>
+          swipeable
+        >
           {banners.map((banner) => (
             <div key={banner.id}>
               <img src={banner.image} className="bannerImg" alt="" />
@@ -90,8 +92,8 @@ const HomeBanner = () => {
       <div>
         <center className="animate__animated animate__fadeInUp animate__slow bannerTextSection">
           <h2 className="bannerText">
-            Welcome To The <br />
-            Company
+            Welcome to <br />
+            Nehal Machinery Limited
           </h2>
           <Link to="/machineries">
             <Button

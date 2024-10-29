@@ -2,12 +2,12 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Button from "../../../../Components/Button/Button";
 
-const Other = ({ mold }) => {
+const RawMaterial = ({ mold }) => {
   const { id, title, image } = mold;
   return (
     <>
       <div
-        className="col-lg-4 mt-4 mb-4 "
+        className="col-lg-6 mt-4 mb-4 "
         data-aos="fade-in"
         data-aos-offset="200"
         data-aos-delay="50"
@@ -20,7 +20,7 @@ const Other = ({ mold }) => {
           </div>
 
           <div className="mx-auto mb-4">
-            <Link to={`/others/${id}`}>
+            <Link to={`/molds/${id}`}>
               <Button
                 title="Details"
                 width="200px"
@@ -36,4 +36,4 @@ const Other = ({ mold }) => {
   );
 };
 
-export default Other;
+export default RawMaterial;
