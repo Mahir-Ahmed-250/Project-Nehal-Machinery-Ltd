@@ -3,8 +3,35 @@ import "./NavigationBar.css";
 import { Link } from "react-router-dom";
 import { RiMenu3Fill } from "react-icons/ri";
 import logo from "../../Assets/logo.png";
+import useFirebase from "../../Hooks/useFirebase";
+import swal from "sweetalert";
+import { FiLogOut } from "react-icons/fi";
 const NavigationBar = () => {
   const [isActive, setIsActive] = useState(false);
+  const { user, logOut } = useFirebase();
+
+  const handleLogout = () => {
+    swal("Logout Warning!", "Do you really want to logout?", "warning", {
+      buttons: {
+        cancel: "NO",
+        catch: {
+          text: "YES",
+          value: "catch",
+        },
+      },
+    }).then((value) => {
+      switch (value) {
+        case "catch":
+          logOut();
+          swal("Well Done!", "You are successfully logged out!", "success");
+          break;
+        default:
+      }
+    });
+  };
+  const stop = (e) => {
+    e.stopPropagation();
+  };
   return (
     <>
       <nav className="navbar navbar-expand-lg sticky-top">
@@ -154,6 +181,18 @@ const NavigationBar = () => {
                 Contact
               </Link>
             </li>
+            {user ? (
+              <li
+                style={{ cursor: "pointer" }}
+                className="nav-link"
+                onClick={handleLogout}
+              >
+                <FiLogOut className="me-1" />
+                Log Out
+              </li>
+            ) : (
+              <></>
+            )}
           </ul>
         </div>
       </nav>

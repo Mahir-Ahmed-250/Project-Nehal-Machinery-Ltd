@@ -24,6 +24,8 @@ import Others from "./Pages/ProductsAndServices/Others/Others/Others";
 import DetailsOther from "./Pages/ProductsAndServices/Others/DetailsOther/DetailsOther";
 // import Scroll from "./Components/Scroll/Scroll";
 import "react-multi-carousel/lib/styles.css";
+import AdminLogin from "./AdminPannel/AdminLogin/AdminLogin";
+import useFirebase from "./Hooks/useFirebase";
 
 function App() {
   const Wrapper = ({ children }) => {
@@ -33,31 +35,59 @@ function App() {
     }, [location.pathname]);
     return children;
   };
-
+  const { user } = useFirebase();
   return (
     <>
       <Wrapper>
         <NavigationBar />
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/home" element={<Home />} />
-          <Route path="/about" element={<AboutUs />} />
-          <Route path="/machineries" element={<Machineries />} />
-          <Route path="/machineries/:id" element={<DetailsMachinery />} />
-          <Route path="/molds" element={<Molds />} />
-          <Route path="/molds/:id" element={<DetailsMold />} />
-          <Route path="/raw" element={<RawMaterials />} />
-          <Route path="/erection" element={<Erection />} />
-          <Route path="/consultancy" element={<ConsultancyService />} />
-          <Route path="/others" element={<Others />} />
-          <Route path="/others/:id" element={<DetailsOther />} />
-          <Route path="/affiliated" element={<Affiliated />} />
-          <Route path="/shop" element={<Shop />} />
-          <Route path="/shop/:id" element={<DetailsShop />} />
-          <Route path="/blog" element={<Blog />} />
-          <Route path="/blog/:id" element={<DetailsBlog />} />
-          <Route path="/contact" element={<ContactUs />} />
-          <Route path="*" element={<Navigate to="/" replace />} />
+          {user ? (
+            <>
+              <Route path="/" element={<Home />} />
+              <Route path="/home" element={<Home />} />
+              <Route path="/about" element={<AboutUs />} />
+              <Route path="/machineries" element={<Machineries />} />
+              <Route path="/machineries/:id" element={<DetailsMachinery />} />
+              <Route path="/molds" element={<Molds />} />
+              <Route path="/molds/:id" element={<DetailsMold />} />
+              <Route path="/raw" element={<RawMaterials />} />
+              <Route path="/erection" element={<Erection />} />
+              <Route path="/consultancy" element={<ConsultancyService />} />
+              <Route path="/others" element={<Others />} />
+              <Route path="/others/:id" element={<DetailsOther />} />
+              <Route path="/affiliated" element={<Affiliated />} />
+              <Route path="/shop" element={<Shop />} />
+              <Route path="/shop/:id" element={<DetailsShop />} />
+              <Route path="/blog" element={<Blog />} />
+              <Route path="/blog/:id" element={<DetailsBlog />} />
+              <Route path="/contact" element={<ContactUs />} />
+              <Route path="/admin" element={<Home />} />
+              <Route path="*" element={<Navigate to="/" replace />} />
+            </>
+          ) : (
+            <>
+              <Route path="/" element={<Home />} />
+              <Route path="/home" element={<Home />} />
+              <Route path="/about" element={<AboutUs />} />
+              <Route path="/machineries" element={<Machineries />} />
+              <Route path="/machineries/:id" element={<DetailsMachinery />} />
+              <Route path="/molds" element={<Molds />} />
+              <Route path="/molds/:id" element={<DetailsMold />} />
+              <Route path="/raw" element={<RawMaterials />} />
+              <Route path="/erection" element={<Erection />} />
+              <Route path="/consultancy" element={<ConsultancyService />} />
+              <Route path="/others" element={<Others />} />
+              <Route path="/others/:id" element={<DetailsOther />} />
+              <Route path="/affiliated" element={<Affiliated />} />
+              <Route path="/shop" element={<Shop />} />
+              <Route path="/shop/:id" element={<DetailsShop />} />
+              <Route path="/blog" element={<Blog />} />
+              <Route path="/blog/:id" element={<DetailsBlog />} />
+              <Route path="/contact" element={<ContactUs />} />
+              <Route path="/admin" element={<AdminLogin />} />
+              <Route path="*" element={<Navigate to="/" replace />} />
+            </>
+          )}
         </Routes>
         <WhatsApp />
         {/* <Scroll /> */}
