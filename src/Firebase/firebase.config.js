@@ -1,10 +1,10 @@
 const firebaseConfig = {
-    apiKey: "AIzaSyDxfgx4AvLUyJdvaShkLnQ7_I2o8Z18Yy0",
-    authDomain: "project-nehal-machinery-ltd.firebaseapp.com",
-    projectId: "project-nehal-machinery-ltd",
-    storageBucket: "project-nehal-machinery-ltd.firebasestorage.app",
-    messagingSenderId: "855288559554",
-    appId: "1:855288559554:web:d14656203188dcfcd7485b"
+    apiKey: process.env.REACT_APP_API_KEY,
+    authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+    projectId: process.env.REACT_APP_PROJECT_ID,
+    storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+    messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
+    appId: process.env.REACT_APP_APP_ID,
 };
 
 export default firebaseConfig;
