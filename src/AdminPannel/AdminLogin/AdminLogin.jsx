@@ -2,6 +2,9 @@ import React from "react";
 import { useState } from "react";
 import BannerTitle from "../../Components/BannerTitle/BannerTitle";
 import useFirebase from "../../Hooks/useFirebase";
+import Button from "../../Components/Button/Button";
+import "./AdminLogin.css";
+import Login from "../../Assets/login.png";
 
 const AdminLogin = () => {
   const { loginUser, loading } = useFirebase();
@@ -29,9 +32,15 @@ const AdminLogin = () => {
   return (
     <>
       <div className="container">
-        <BannerTitle title="ADMIN LOGIN" />
+        <br />
+        <br />
+        <br />
+        <br />
+        <BannerTitle title1="Admin Login" title2="Nehal Machinery Ltd" />
         <div className="loginContainer">
-          <div>{/* <img src={logo} alt="" width="100%" /> */}</div>
+          <div>
+            <img src={Login} alt="" width="100%" />
+          </div>
           <div className="loginForm">
             <form onSubmit={handleLogin}>
               <div className="form-outline mb-4">
@@ -55,20 +64,28 @@ const AdminLogin = () => {
                 />
 
                 <input
-                  className="form-check-input me-2"
+                  className="form-check-input ms-1"
                   type="checkbox"
                   value=""
                   id="form2Example3"
                   onClick={togglePassword}
                 />
-                <label className="form-check-label">Show Password</label>
+                <label className="form-check-label ms-4">Show Password</label>
               </div>
-              <button className="loginBtn">LOGIN</button>
-
-              <div className="text-center text-lg-start mt-4 pt-2"></div>
+              <Button
+                title="Login"
+                width="200px"
+                border="2px solid black"
+                color="black"
+                fontSize="22px"
+              />
             </form>
           </div>
         </div>
+        <br />
+        <br />
+        <br />
+        <br />
       </div>
     </>
   );
