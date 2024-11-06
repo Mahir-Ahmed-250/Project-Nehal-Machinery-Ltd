@@ -14,6 +14,7 @@ import loadingImg from "../../Assets/logo.png";
 import { db } from "../../Hooks/useFirebase";
 import BannerTitle from "../../Components/BannerTitle/BannerTitle";
 import AdminNavigation from "../Components/AdminNavigation/AdminNavigation";
+import LoadingSkeleton from "../Components/LoadingSkeleton/LoadingSkeleton";
 
 const AdminHomeBanner = () => {
   const [baseImage, setBaseImage] = useState("");
@@ -82,6 +83,12 @@ const AdminHomeBanner = () => {
       }
     } catch (error) {
       console.log("error--->", error);
+      swal({
+        title: "Sorry",
+        text: "Image Size is Not Matched",
+        icon: "error",
+        button: "OK",
+      });
     }
     setLoading(false);
   };
@@ -181,7 +188,7 @@ const AdminHomeBanner = () => {
         <BannerTitle title1="Current Home Banners" />
         <AdminNavigation />
         {loading2 ? (
-          <>{/* <LoadingSkeletonBanner /> */}</>
+          <>{<LoadingSkeleton />}</>
         ) : (
           <div className="row">
             {banners.map((banner) => (
@@ -195,8 +202,7 @@ const AdminHomeBanner = () => {
                 />
                 <button
                   className="delBtn"
-                  onClick={() => onPressDeleteMsg(banner.id)}
-                >
+                  onClick={() => onPressDeleteMsg(banner.id)}>
                   Delete
                 </button>
               </div>
