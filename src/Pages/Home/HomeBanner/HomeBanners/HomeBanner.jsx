@@ -3,13 +3,28 @@ import "./HomeBanner.css";
 import Button from "../../../../Components/Button/Button";
 import Carousel from "react-multi-carousel";
 import { Link } from "react-router-dom";
+import { db } from "../../../../Hooks/useFirebase";
+import { collection, onSnapshot, query } from "firebase/firestore";
 
 const HomeBanner = () => {
   const [banners, setBanners] = useState([]);
+
+  const [loading, setLoading] = useState(false);
+
   useEffect(() => {
-    fetch("HomeBanner.JSON")
-      .then((res) => res.json())
-      .then((data) => setBanners(data));
+    setLoading(true);
+    //create the query
+    const q = query(collection(db, "HomeBanner"));
+    //create listener
+    const bannerListenerSubscription = onSnapshot(q, (querySnapShot) => {
+      const list = [];
+      querySnapShot.forEach((doc) => {
+        list.push({ ...doc.data(), id: doc.id });
+      });
+      setBanners(list);
+      setLoading(false);
+    });
+    return bannerListenerSubscription;
   }, []);
 
   return (
@@ -72,7 +87,7 @@ const HomeBanner = () => {
         >
           {banners.map((banner) => (
             <div key={banner.id}>
-              <img src={banner.image} className="bannerImg" alt="" />
+              <img src={banner.img} className="bannerImg" alt="" />
             </div>
           ))}
         </Carousel>

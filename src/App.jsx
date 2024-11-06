@@ -26,7 +26,9 @@ import DetailsOther from "./Pages/ProductsAndServices/Others/DetailsOther/Detail
 import "react-multi-carousel/lib/styles.css";
 import AdminLogin from "./AdminPannel/AdminLogin/AdminLogin";
 import useFirebase from "./Hooks/useFirebase";
-
+import AdminHome from "./AdminPannel/AdminHome/AdminHome";
+import AdminHomeBanner from "./AdminPannel/AdminHomeBanner/AdminHomeBanner";
+import loadingImg from "./Assets/logo.png";
 function App() {
   const Wrapper = ({ children }) => {
     const location = useLocation();
@@ -36,6 +38,16 @@ function App() {
     return children;
   };
   const { user } = useFirebase();
+  const { loading } = useFirebase();
+  if (loading) {
+    return (
+      <>
+        <div className="loading-gif">
+          <img src={loadingImg} alt="" />
+        </div>
+      </>
+    );
+  }
   return (
     <>
       <Wrapper>
@@ -61,7 +73,8 @@ function App() {
               <Route path="/blog" element={<Blog />} />
               <Route path="/blog/:id" element={<DetailsBlog />} />
               <Route path="/contact" element={<ContactUs />} />
-              <Route path="/admin" element={<Home />} />
+              <Route path="/admin" element={<AdminHome />} />
+              <Route path="/admin/homeBanner" element={<AdminHomeBanner />} />
               <Route path="*" element={<Navigate to="/" replace />} />
             </>
           ) : (

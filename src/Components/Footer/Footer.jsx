@@ -21,7 +21,8 @@ const Footer = () => {
                 style={{ textDecoration: "none" }}
                 href="tel:+8801725046048"
                 target="_blank"
-                rel="noopener noreferrer">
+                rel="noopener noreferrer"
+              >
                 {" "}
                 +8801725046048
               </a>
@@ -30,7 +31,8 @@ const Footer = () => {
               <span>Email:</span>
               <a
                 style={{ textDecoration: "none" }}
-                href="mailto:saiful@nehalml.com">
+                href="mailto:saiful@nehalml.com"
+              >
                 {" "}
                 saiful@nehalml.com
               </a>
@@ -60,7 +62,8 @@ const Footer = () => {
                 style={{ textDecoration: "none" }}
                 href="http://"
                 target="_blank"
-                rel="noopener noreferrer">
+                rel="noopener noreferrer"
+              >
                 House: 03 (5th floor), Road no: 15 Sector: 01, Uttara,
                 Dhaka-1230
               </a>{" "}
@@ -71,7 +74,8 @@ const Footer = () => {
                 style={{ textDecoration: "none" }}
                 href="http://"
                 target="_blank"
-                rel="noopener noreferrer">
+                rel="noopener noreferrer"
+              >
                 {" "}
                 67/9, Kakrail, Eastern Mansion (2nd floor) Room: 6, Dhaka-1000
               </a>
@@ -82,7 +86,8 @@ const Footer = () => {
                 style={{ textDecoration: "none" }}
                 href="http://"
                 target="_blank"
-                rel="noopener noreferrer">
+                rel="noopener noreferrer"
+              >
                 {" "}
                 44 South kunipara, Tejgaon I/A Dhaka-1208.
               </a>

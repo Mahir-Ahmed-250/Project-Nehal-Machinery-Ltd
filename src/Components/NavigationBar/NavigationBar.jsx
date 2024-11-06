@@ -29,9 +29,7 @@ const NavigationBar = () => {
       }
     });
   };
-  const stop = (e) => {
-    e.stopPropagation();
-  };
+
   return (
     <>
       <nav className="navbar navbar-expand-lg sticky-top">
@@ -181,6 +179,13 @@ const NavigationBar = () => {
                 Contact
               </Link>
             </li>
+            {user ? (
+              <Link to="/admin">
+                <img width="50px" src={logo} alt="" />
+              </Link>
+            ) : (
+              <></>
+            )}
             {user ? (
               <li
                 style={{ cursor: "pointer" }}
