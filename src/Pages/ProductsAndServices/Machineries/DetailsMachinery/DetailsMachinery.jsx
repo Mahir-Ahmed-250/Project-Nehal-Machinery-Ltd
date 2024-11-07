@@ -3,23 +3,38 @@ import { Link, useParams } from "react-router-dom";
 import BannerTitle from "../../../../Components/BannerTitle/BannerTitle";
 import Button from "../../../../Components/Button/Button";
 import Carousel from "react-multi-carousel";
+import { collection, onSnapshot, query } from "firebase/firestore";
+import { db } from "../../../../Hooks/useFirebase";
 
 const DetailsMachinery = () => {
   const { id } = useParams();
   const [machineries, setMachineries] = useState([]);
   const [singleMachinery, setSingleMachinery] = useState({});
-  const ID = parseInt(id);
+  const ID = id;
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    fetch("https://fakestoreapi.com/products/")
-      .then((res) => res.json())
-      .then((data) => setMachineries(data));
+    setLoading(true);
+    //create the query
+    const q = query(collection(db, "Machinery"));
+    //create listener
+    const bannerListenerSubscription = onSnapshot(q, (querySnapShot) => {
+      const list = [];
+      querySnapShot.forEach((doc) => {
+        list.push({ ...doc.data(), id: doc.id });
+      });
+      setMachineries(list);
+      setLoading(false);
+      console.log(machineries);
+    });
+    return bannerListenerSubscription;
   }, []);
 
   useEffect(() => {
     const foundService = machineries.find((service) => service.id === ID);
     setSingleMachinery(foundService);
   }, [ID, machineries]);
+
   return (
     <>
       <div className="machineryBannerContainer">
@@ -31,7 +46,7 @@ const DetailsMachinery = () => {
             <img
               style={{ width: "100%", borderRadius: "20px", height: "600px" }}
               variant="top"
-              src={singleMachinery?.image}
+              src={singleMachinery?.img}
               alt=""
             />
           </div>
@@ -40,9 +55,10 @@ const DetailsMachinery = () => {
               style={{
                 marginTop: "20px",
                 fontWeight: "bold",
-              }}>
+              }}
+            >
               {" "}
-              {singleMachinery?.title}
+              {singleMachinery?.name}
             </h1>
             <hr />
             <p
@@ -50,7 +66,8 @@ const DetailsMachinery = () => {
                 fontSize: "32px",
                 marginTop: "20px",
                 textAlign: "left",
-              }}>
+              }}
+            >
               {singleMachinery?.description}
             </p>
           </div>
@@ -62,9 +79,11 @@ const DetailsMachinery = () => {
             fontSize: "55px",
             marginTop: "20px",
             fontWeight: "bold",
-          }}>
+          }}
+        >
           Related Machinery
         </h2>
+        <hr />
         <Carousel
           additionalTransfrom={0}
           autoPlay
@@ -115,33 +134,26 @@ const DetailsMachinery = () => {
           showDots={false}
           sliderClass=""
           slidesToSlide={1}
-          swipeable>
-          {machineries
-            .filter((machinery) => machinery.category === "jewelery")
-            .map((machinery) => (
-              <div key={machinery.id}>
-                <div className="card h-100 p-3 me-4 mb-5">
-                  <img
-                    src={machinery.image}
-                    alt=""
-                    style={{ height: "300px" }}
-                  />
-                  <h6 className="mt-3">
-                    {`${machinery.title}`.slice(0, 12)}....
-                  </h6>
+          swipeable
+        >
+          {machineries.map((machinery) => (
+            <div key={machinery.id}>
+              <div className="card h-100 p-3 me-4 mb-5">
+                <img src={machinery.img} alt="" style={{ height: "300px" }} />
+                <h6 className="mt-3">{`${machinery.name}`}</h6>
 
-                  <Link to={`/machineries/${machinery.id}`}>
-                    <Button
-                      title="Details"
-                      width="250px"
-                      border="2px solid black"
-                      color="black"
-                      fontSize="20px"
-                    />
-                  </Link>
-                </div>
+                <Link to={`/machineries/${machinery.id}`}>
+                  <Button
+                    title="Details"
+                    width="250px"
+                    border="2px solid black"
+                    color="black"
+                    fontSize="20px"
+                  />
+                </Link>
               </div>
-            ))}
+            </div>
+          ))}
         </Carousel>
       </div>
     </>

@@ -29,6 +29,8 @@ import useFirebase from "./Hooks/useFirebase";
 import AdminHome from "./AdminPannel/AdminHome/AdminHome";
 import AdminHomeBanner from "./AdminPannel/AdminHomeBanner/AdminHomeBanner";
 import loadingImg from "./Assets/logo.png";
+import AdminProductsAndServicesHome from "./AdminPannel/AdminProductsAndServices/AdminProductsAndServicesHome/AdminProductsAndServicesHome";
+import AdminMachinery from "./AdminPannel/AdminProductsAndServices/AdminMachinery/AdminMachinery";
 function App() {
   const Wrapper = ({ children }) => {
     const location = useLocation();
@@ -75,6 +77,11 @@ function App() {
               <Route path="/contact" element={<ContactUs />} />
               <Route path="/admin" element={<AdminHome />} />
               <Route path="/admin/homeBanner" element={<AdminHomeBanner />} />
+              <Route
+                path="/admin/products&services"
+                element={<AdminProductsAndServicesHome />}
+              />
+              <Route path="/admin/machinery" element={<AdminMachinery />} />
               <Route path="*" element={<Navigate to="/" replace />} />
             </>
           ) : (

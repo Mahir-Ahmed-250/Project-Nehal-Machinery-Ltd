@@ -3,29 +3,31 @@ import { Link } from "react-router-dom";
 import Button from "../../../../Components/Button/Button";
 
 const HomeMachinery = ({ product }) => {
-  const { id, title, image } = product;
+  const { id, name, img } = product;
   return (
     <>
-      <div className="col-md-4 mt-4 mb-4 ">
+      <div className="col-lg-4 mt-4 mb-4 ">
         <div
           data-aos="fade-in"
           data-aos-offset="200"
           data-aos-delay="50"
-          data-aos-duration="1000">
+          data-aos-duration="1000"
+        >
           <div
             class="card p-5 text-center shadow"
-            style={{ borderRadius: "8%" }}>
+            style={{ borderRadius: "5%" }}
+          >
             <img
-              src={image}
+              src={img}
               alt="postsImage"
               className="card-img-top"
               style={{ height: "300px" }}
             />
 
             <div class="card-body">
-              <h5 style={{ height: "50px" }}>{title}</h5>
+              <h5 style={{ height: "50px" }}>{name}</h5>
             </div>
-            <Link to={`/machineries/${id}`}>
+            <Link className="mt-4" to={`/machineries/${id}`}>
               <Button
                 title="Details"
                 width="200px"

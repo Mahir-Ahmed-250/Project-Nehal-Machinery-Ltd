@@ -4,25 +4,38 @@ import { Link } from "react-router-dom";
 import HomeMachinery from "../HomeMachinery/HomeMachinery";
 import Button from "../../../../Components/Button/Button";
 import "./HomeMachineries.css";
+import { collection, onSnapshot, query } from "firebase/firestore";
+import { db } from "../../../../Hooks/useFirebase";
 
 const HomeMachineries = () => {
   const [products, setProducts] = useState([]);
+
+  const [loading, setLoading] = useState(false);
+
   useEffect(() => {
-    fetch("https://fakestoreapi.com/products/")
-      .then((res) => res.json())
-      .then((data) => setProducts(data));
+    setLoading(true);
+    //create the query
+    const q = query(collection(db, "Machinery"));
+    //create listener
+    const bannerListenerSubscription = onSnapshot(q, (querySnapShot) => {
+      const list = [];
+      querySnapShot.forEach((doc) => {
+        list.push({ ...doc.data(), id: doc.id });
+      });
+      setProducts(list);
+      setLoading(false);
+    });
+    return bannerListenerSubscription;
   }, []);
+
   return (
     <div className="gg">
       <Title title="Our Machineries" />
       <div className="container text-left">
         <div className="row mt-3" data-aos="fade-up" data-aos-duration="1000">
-          {products
-            .filter((machinery) => machinery.category === "jewelery")
-            .slice(0, 6)
-            .map((product) => (
-              <HomeMachinery key={product.id} product={product}></HomeMachinery>
-            ))}
+          {products.slice(0, 6).map((product) => (
+            <HomeMachinery key={product.id} product={product}></HomeMachinery>
+          ))}
           <div className="row mt-4">
             <div className="text-center">
               <Link to="/machineries">

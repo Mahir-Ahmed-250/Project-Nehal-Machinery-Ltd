@@ -9,12 +9,12 @@ import {
 import React, { useEffect } from "react";
 import { useState } from "react";
 import swal from "sweetalert";
-import "./AdminHomeBanner.css";
 import loadingImg from "../../Assets/logo.png";
 import { db } from "../../Hooks/useFirebase";
 import BannerTitle from "../../Components/BannerTitle/BannerTitle";
 import AdminNavigation from "../Components/AdminNavigation/AdminNavigation";
 import LoadingSkeleton from "../Components/LoadingSkeleton/LoadingSkeleton";
+import "./AdminHomeBanner.css";
 
 const AdminHomeBanner = () => {
   const [baseImage, setBaseImage] = useState("");
@@ -202,7 +202,8 @@ const AdminHomeBanner = () => {
                 />
                 <button
                   className="delBtn"
-                  onClick={() => onPressDeleteMsg(banner.id)}>
+                  onClick={() => onPressDeleteMsg(banner.id)}
+                >
                   Delete
                 </button>
               </div>

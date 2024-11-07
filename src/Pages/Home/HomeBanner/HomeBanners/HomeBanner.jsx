@@ -8,7 +8,6 @@ import { collection, onSnapshot, query } from "firebase/firestore";
 
 const HomeBanner = () => {
   const [banners, setBanners] = useState([]);
-
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {

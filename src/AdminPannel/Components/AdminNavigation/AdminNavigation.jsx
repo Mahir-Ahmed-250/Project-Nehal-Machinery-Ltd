@@ -12,7 +12,7 @@ const AdminNavigation = () => {
         <Link to="/admin/homeBanner" className="adminNav">
           Home Banner
         </Link>
-        <Link to="/admin/products&service" className="adminNav">
+        <Link to="/admin/products&services" className="adminNav">
           Products & Service
         </Link>
         <Link to="/admin/shop" className="adminNav">

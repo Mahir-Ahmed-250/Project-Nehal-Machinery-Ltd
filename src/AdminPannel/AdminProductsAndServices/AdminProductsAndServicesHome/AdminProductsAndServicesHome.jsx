@@ -1,18 +1,13 @@
 import React from "react";
-import image from "../../Assets/dashboard.png";
-import "./AdminHome.css";
+import BannerTitle from "../../../Components/BannerTitle/BannerTitle";
 import { Link } from "react-router-dom";
-import AdminNavigation from "../Components/AdminNavigation/AdminNavigation";
-import BannerTitle from "../../Components/BannerTitle/BannerTitle";
-
-const AdminHome = () => {
+import AdminNavigation from "../../Components/AdminNavigation/AdminNavigation";
+import image from "../../../Assets/adminproducts.jpeg";
+const AdminProductsAndServicesHome = () => {
   return (
     <>
-      <div className="container " style={{ paddingTop: "10%" }}>
-        <BannerTitle
-          title1="Welcome to Admin Dashboard"
-          title2="Nehal Machinery Ltd"
-        />
+      <div style={{ paddingTop: "12%" }} className="container">
+        <BannerTitle title1="Products & Services" />
         <AdminNavigation />
         <div className="adminHomeContainer mb-5">
           <div>
@@ -21,11 +16,11 @@ const AdminHome = () => {
           <div className="container pb-5">
             <div className="row">
               <div className="col-lg-6">
-                <Link to="/admin/homeBanner" style={{ textDecoration: "none" }}>
+                <Link to="/admin/machinery" style={{ textDecoration: "none" }}>
                   <div className="adminNavigation">
-                    <h2 className="adminNavigationTitle">Home Banner</h2>
+                    <h2 className="adminNavigationTitle">Machinery</h2>
                     <h6 className="adminNavigationText">
-                      Upload & Delete Home Banner Here
+                      Upload, Edit & Delete Machinery Here
                     </h6>
                   </div>
                 </Link>
@@ -36,9 +31,9 @@ const AdminHome = () => {
                   style={{ textDecoration: "none" }}
                 >
                   <div className="adminNavigation">
-                    <h2 className="homeNavigationTitle">Products & Services</h2>
+                    <h2 className="homeNavigationTitle">Molds</h2>
                     <h6 className="homeNavigationText">
-                      Upload & Delete Products & Services Here
+                      Upload, Edit & Delete Molds Here
                     </h6>
                   </div>
                 </Link>
@@ -49,9 +44,9 @@ const AdminHome = () => {
                   style={{ textDecoration: "none" }}
                 >
                   <div className="adminNavigation">
-                    <h2 className="homeNavigationTitle">Shop</h2>
+                    <h2 className="homeNavigationTitle">Raw Materials</h2>
                     <h6 className="homeNavigationText">
-                      Upload, Edit, Delete Shop Here
+                      Upload, Edit, Delete Raw Materials Here
                     </h6>
                   </div>
                 </Link>
@@ -60,18 +55,10 @@ const AdminHome = () => {
               <div className="col-lg-6">
                 <Link to="/admin/portfolio" style={{ textDecoration: "none" }}>
                   <div className="adminNavigation">
-                    <h2 className="homeNavigationTitle">Blog</h2>
+                    <h2 className="homeNavigationTitle">Others</h2>
                     <h6 className="homeNavigationText">
-                      Upload, Edit, Delete Blog Here
+                      Upload, Edit, Delete Others Here
                     </h6>
-                  </div>
-                </Link>
-              </div>
-              <div>
-                <Link to="/admin/counter" style={{ textDecoration: "none" }}>
-                  <div className="adminNavigation">
-                    <h2 className="homeNavigationTitle"> About Us</h2>
-                    <h6 className="homeNavigationText">Update About Us Here</h6>
                   </div>
                 </Link>
               </div>
@@ -83,4 +70,4 @@ const AdminHome = () => {
   );
 };
 
-export default AdminHome;
+export default AdminProductsAndServicesHome;

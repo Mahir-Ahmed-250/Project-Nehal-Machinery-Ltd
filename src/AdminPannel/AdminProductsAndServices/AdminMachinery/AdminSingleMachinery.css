@@ -1,0 +1,39 @@
+.serialDiv {
+    position: relative;
+    margin-bottom: -24px;
+    background-color: burlywood;
+    width: 30px;
+    font-family: cursive;
+}
+
+.editBtn {
+    border: none;
+    height: 46px;
+    width: 124px;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    letter-spacing: 3px;
+    background: linear-gradient(to left, #e2e2e2 50%, #ffee00 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+    transition: all .3s ease-out;
+    margin-top: 20px;
+    margin-left: 10px;
+}
+
+.editBtn:hover {
+    background-position: left bottom;
+    color: #000000;
+}
+
+@media screen and (max-width: 1080px) {
+    .editBtn {
+        margin-left: 0;
+    }
+}
+
+@media screen and (max-width: 760px) {
+    .editBtn {
+        margin-left: 10px;
+    }
+}
