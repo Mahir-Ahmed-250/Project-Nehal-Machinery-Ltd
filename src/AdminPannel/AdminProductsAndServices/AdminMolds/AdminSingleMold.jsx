@@ -45,7 +45,7 @@ function MyVerticallyCenteredModal(props) {
     });
   };
   const onClickUpdate = async () => {
-    const MachineryRef = doc(db, "RawMaterials", props.mold.id);
+    const MachineryRef = doc(db, "Molds", props.mold.id);
     try {
       if (baseImage && serial && name && description) {
         await updateDoc(MachineryRef, {
@@ -181,7 +181,7 @@ const AdminSingleMold = ({ mold }) => {
   const [modalShow, setModalShow] = React.useState(false);
   const onPressDelete = async (id) => {
     try {
-      deleteDoc(doc(db, "RawMaterials", id));
+      deleteDoc(doc(db, "Molds", id));
     } catch (err) {
       console.log("err--->", err);
     }
