@@ -1,13 +1,27 @@
 import React, { useEffect, useState } from "react";
 import BannerTitle from "../../../../Components/BannerTitle/BannerTitle";
 import Other from "../Other/Other";
+import { collection, onSnapshot, query } from "firebase/firestore";
+import { db } from "../../../../Hooks/useFirebase";
 
 const Others = () => {
-  const [molds, setMolds] = useState([]);
+  const [others, setOthers] = useState([]);
+  const [loading, setLoading] = useState(false);
+
   useEffect(() => {
-    fetch("https://fakestoreapi.com/products/")
-      .then((res) => res.json())
-      .then((data) => setMolds(data));
+    setLoading(true);
+    //create the query
+    const q = query(collection(db, "Others"));
+    //create listener
+    const bannerListenerSubscription = onSnapshot(q, (querySnapShot) => {
+      const list = [];
+      querySnapShot.forEach((doc) => {
+        list.push({ ...doc.data(), id: doc.id });
+      });
+      setOthers(list);
+      setLoading(false);
+    });
+    return bannerListenerSubscription;
   }, []);
   return (
     <>
@@ -16,10 +30,10 @@ const Others = () => {
       </div>
       <div className="container">
         <div className="row">
-          {molds
-            .filter((mold) => mold.category === "men's clothing")
-            .map((mold) => (
-              <Other key={mold.id} mold={mold} />
+          {others
+            .sort((a, b) => a.serial - b.serial)
+            .map((other) => (
+              <Other key={other.id} other={other} />
             ))}
         </div>
       </div>

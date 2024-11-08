@@ -3,23 +3,37 @@ import { Link, useParams } from "react-router-dom";
 import BannerTitle from "../../../../Components/BannerTitle/BannerTitle";
 import Carousel from "react-multi-carousel";
 import Button from "../../../../Components/Button/Button";
+import { collection, onSnapshot, query } from "firebase/firestore";
+import { db } from "../../../../Hooks/useFirebase";
 
 const DetailsOther = () => {
   const { id } = useParams();
-  const [molds, setMolds] = useState([]);
+  const [others, setOthers] = useState([]);
   const [singleMold, setSingleMold] = useState({});
-  const ID = parseInt(id);
+  const ID = id;
+
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    fetch("https://fakestoreapi.com/products/")
-      .then((res) => res.json())
-      .then((data) => setMolds(data));
+    setLoading(true);
+    //create the query
+    const q = query(collection(db, "Others"));
+    //create listener
+    const bannerListenerSubscription = onSnapshot(q, (querySnapShot) => {
+      const list = [];
+      querySnapShot.forEach((doc) => {
+        list.push({ ...doc.data(), id: doc.id });
+      });
+      setOthers(list);
+      setLoading(false);
+    });
+    return bannerListenerSubscription;
   }, []);
 
   useEffect(() => {
-    const foundService = molds.find((service) => service.id === ID);
+    const foundService = others.find((service) => service.id === ID);
     setSingleMold(foundService);
-  }, [ID, molds]);
+  }, [ID, others]);
   return (
     <>
       <div className="moldsBannerContainer">
@@ -31,7 +45,7 @@ const DetailsOther = () => {
             <img
               style={{ width: "100%", borderRadius: "20px", height: "600px" }}
               variant="top"
-              src={singleMold?.image}
+              src={singleMold?.img}
               alt=""
             />
           </div>
@@ -42,7 +56,7 @@ const DetailsOther = () => {
                 fontWeight: "bold",
               }}>
               {" "}
-              {singleMold?.title}
+              {singleMold?.name}
             </h1>
             <hr />
             <p
@@ -75,7 +89,6 @@ const DetailsOther = () => {
           draggable
           focusOnSelect={false}
           infinite
-      
           keyBoardControl
           minimumTouchDrag={80}
           pauseOnHover={true}
@@ -116,26 +129,24 @@ const DetailsOther = () => {
           sliderClass=""
           slidesToSlide={1}
           swipeable>
-          {molds
-            .filter((mold) => mold.category === "men's clothing")
-            .map((mold) => (
-              <div key={mold.id}>
-                <div className="card h-100 p-3 me-4 mb-5">
-                  <img src={mold.image} alt="" style={{ height: "300px" }} />
-                  <h6 className="mt-3">{`${mold.title}`.slice(0, 12)}....</h6>
+          {others.map((other) => (
+            <div key={other.id}>
+              <div className="card h-100 p-3 me-4 mb-5">
+                <img src={other.img} alt="" style={{ height: "300px" }} />
+                <h6 className="mt-3">{other.name}</h6>
 
-                  <Link to={`/machineries/${mold.id}`}>
-                    <Button
-                      title="Details"
-                      width="250px"
-                      border="2px solid black"
-                      color="black"
-                      fontSize="20px"
-                    />
-                  </Link>
-                </div>
+                <Link to={`/machineries/${other.id}`}>
+                  <Button
+                    title="Details"
+                    width="250px"
+                    border="2px solid black"
+                    color="black"
+                    fontSize="20px"
+                  />
+                </Link>
               </div>
-            ))}
+            </div>
+          ))}
         </Carousel>
       </div>
     </>

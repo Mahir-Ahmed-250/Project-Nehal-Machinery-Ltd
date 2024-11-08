@@ -33,8 +33,7 @@ const AdminHome = () => {
               <div className="col-lg-6">
                 <Link
                   to="/admin/products&services"
-                  style={{ textDecoration: "none" }}
-                >
+                  style={{ textDecoration: "none" }}>
                   <div className="adminNavigation">
                     <h2 className="homeNavigationTitle">Products & Services</h2>
                     <h6 className="homeNavigationText">
@@ -44,10 +43,7 @@ const AdminHome = () => {
                 </Link>
               </div>
               <div className="col-lg-6">
-                <Link
-                  to="/admin/homePortfolio"
-                  style={{ textDecoration: "none" }}
-                >
+                <Link to="/admin/shop" style={{ textDecoration: "none" }}>
                   <div className="adminNavigation">
                     <h2 className="homeNavigationTitle">Shop</h2>
                     <h6 className="homeNavigationText">

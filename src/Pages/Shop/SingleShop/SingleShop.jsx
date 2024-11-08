@@ -3,7 +3,7 @@ import Button from "../../../Components/Button/Button";
 import { Link } from "react-router-dom";
 
 const SingleShop = ({ shop }) => {
-  const { id, title, image } = shop;
+  const { id, name, price, img } = shop;
   return (
     <>
       <div
@@ -13,9 +13,10 @@ const SingleShop = ({ shop }) => {
         data-aos-delay="50"
         data-aos-duration="1000">
         <div className="card h-100 p-4 shadow" style={{ borderRadius: "3%" }}>
-          <img src={image} alt="postsImage" style={{ height: "300px" }} />
+          <img src={img} alt="postsImage" style={{ height: "300px" }} />
           <div className="card-body ">
-            <h5 className="card-title blog-title">{title}</h5>
+            <h5 className="card-title blog-title">{name}</h5>
+            <h5 className="card-title blog-title mt-2">Price: {price} Taka</h5>
           </div>
 
           <div className="mx-auto mb-4">

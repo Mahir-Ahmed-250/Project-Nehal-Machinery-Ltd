@@ -2,14 +2,29 @@ import React, { useEffect, useState } from "react";
 import "./Shop.css";
 import BannerTitle from "../../../Components/BannerTitle/BannerTitle";
 import SingleShop from "../SingleShop/SingleShop";
+import { collection, onSnapshot, query } from "firebase/firestore";
+import { db } from "../../../Hooks/useFirebase";
 
 const Shop = () => {
   const [shops, setShops] = useState([]);
+  const [loading, setLoading] = useState(false);
+
   useEffect(() => {
-    fetch("https://fakestoreapi.com/products/")
-      .then((res) => res.json())
-      .then((data) => setShops(data));
+    setLoading(true);
+    //create the query
+    const q = query(collection(db, "Shops"));
+    //create listener
+    const bannerListenerSubscription = onSnapshot(q, (querySnapShot) => {
+      const list = [];
+      querySnapShot.forEach((doc) => {
+        list.push({ ...doc.data(), id: doc.id });
+      });
+      setShops(list);
+      setLoading(false);
+    });
+    return bannerListenerSubscription;
   }, []);
+
   return (
     <>
       <div className="shopBannerContainer">

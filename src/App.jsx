@@ -30,11 +30,13 @@ import AdminHome from "./AdminPannel/AdminHome/AdminHome";
 import AdminHomeBanner from "./AdminPannel/AdminHomeBanner/AdminHomeBanner";
 import loadingImg from "./Assets/logo.png";
 import AdminProductsAndServicesHome from "./AdminPannel/AdminProductsAndServices/AdminProductsAndServicesHome/AdminProductsAndServicesHome";
-
 import AdminRawMaterials from "./AdminPannel/AdminProductsAndServices/AdminRawMaterials/AdminRawMaterials";
 import DetailsRawMaterials from "./Pages/ProductsAndServices/RawMaterials/DetailsRawMaterials/DetailsRawMaterials";
 import AdminMolds from "./AdminPannel/AdminProductsAndServices/AdminMolds/AdminMolds";
 import AdminMachineries from "./AdminPannel/AdminProductsAndServices/AdminMachineries/AdminMachineries";
+import AdminOthers from "./AdminPannel/AdminProductsAndServices/AdminOthers/AdminOthers";
+import AdminShops from "./AdminPannel/AdminShops/AdminShops";
+
 function App() {
   const Wrapper = ({ children }) => {
     const location = useLocation();
@@ -72,8 +74,8 @@ function App() {
               <Route path="/raw/:id" element={<DetailsRawMaterials />} />
               <Route path="/erection" element={<Erection />} />
               <Route path="/consultancy" element={<ConsultancyService />} />
-              <Route path="/others" element={<Others />} />
-              <Route path="/others/:id" element={<DetailsOther />} />
+              <Route path="/other" element={<Others />} />
+              <Route path="/other/:id" element={<DetailsOther />} />
               <Route path="/affiliated" element={<Affiliated />} />
               <Route path="/shop" element={<Shop />} />
               <Route path="/shop/:id" element={<DetailsShop />} />
@@ -89,6 +91,8 @@ function App() {
               <Route path="/admin/machinery" element={<AdminMachineries />} />
               <Route path="/admin/mold" element={<AdminMolds />} />
               <Route path="/admin/raw" element={<AdminRawMaterials />} />
+              <Route path="/admin/other" element={<AdminOthers />} />
+              <Route path="/admin/shop" element={<AdminShops />} />
               <Route path="*" element={<Navigate to="/" replace />} />
             </>
           ) : (

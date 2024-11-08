@@ -49,14 +49,12 @@ const NavigationBar = () => {
           data-target="#navbarNavDropdown"
           aria-controls="navbarNavDropdown"
           aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
+          aria-label="Toggle navigation">
           <RiMenu3Fill onClick={() => setIsActive(!isActive)} />
         </button>
         <div
           className="collapse navbar-collapse navbarItems me-4"
-          id="navbarNavDropdown"
-        >
+          id="navbarNavDropdown">
           <ul className="navbar-nav ">
             <li className="nav-item">
               <Link className="nav-link" to="/home">
@@ -95,8 +93,7 @@ const NavigationBar = () => {
                 className="nav-link dropdown-toggle"
                 role="button"
                 data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
+                aria-expanded="false">
                 Products & Services
               </Link>
               <ul className="dropdown-menu">
@@ -126,7 +123,7 @@ const NavigationBar = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link className="dropdown-item" to="/others">
+                  <Link className="dropdown-item" to="/other">
                     Others
                   </Link>
                 </li>
@@ -190,8 +187,7 @@ const NavigationBar = () => {
               <li
                 style={{ cursor: "pointer" }}
                 className="nav-link"
-                onClick={handleLogout}
-              >
+                onClick={handleLogout}>
                 <FiLogOut className="me-1" />
                 Log Out
               </li>

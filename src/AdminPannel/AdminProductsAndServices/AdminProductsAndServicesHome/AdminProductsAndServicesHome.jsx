@@ -47,7 +47,7 @@ const AdminProductsAndServicesHome = () => {
               </div>
 
               <div className="col-lg-6">
-                <Link to="/admin/portfolio" style={{ textDecoration: "none" }}>
+                <Link to="/admin/other" style={{ textDecoration: "none" }}>
                   <div className="adminNavigation">
                     <h2 className="homeNavigationTitle">Others</h2>
                     <h6 className="homeNavigationText">

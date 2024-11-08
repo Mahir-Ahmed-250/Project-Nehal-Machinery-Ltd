@@ -25,10 +25,15 @@ const HomeMachinery = ({ product }) => {
               style={{ height: "300px", width: "100%" }}
             />
 
-            <div class="card-body">
-              <h5 style={{ height: "50px", wordWrap: "break-word" }}>{name}</h5>
-            </div>
-            <Link className="mt-4 mb-4" to={`/machineries/${id}`}>
+            <h5
+              style={{
+                wordWrap: "break-word",
+                marginTop: "15px",
+              }}>
+              {name}
+            </h5>
+
+            <Link className="mb-4" to={`/machineries/${id}`}>
               <Button
                 title="Details"
                 width="200px"

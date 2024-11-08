@@ -197,13 +197,12 @@ const AdminHomeBanner = () => {
                   src={banner.img}
                   alt=""
                   width="100%"
-                  height="250px"
-                  className=""
+                  height="300px"
+                  style={{ border: "5px solid black" }}
                 />
                 <button
                   className="delBtn"
-                  onClick={() => onPressDeleteMsg(banner.id)}
-                >
+                  onClick={() => onPressDeleteMsg(banner.id)}>
                   Delete
                 </button>
               </div>

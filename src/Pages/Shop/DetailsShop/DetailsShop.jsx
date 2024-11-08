@@ -3,19 +3,32 @@ import { Link, useParams } from "react-router-dom";
 import BannerTitle from "../../../Components/BannerTitle/BannerTitle";
 import Carousel from "react-multi-carousel";
 import Button from "../../../Components/Button/Button";
+import { collection, onSnapshot, query } from "firebase/firestore";
+import { db } from "../../../Hooks/useFirebase";
 
 const DetailsShop = () => {
   const { id } = useParams();
   const [shops, setShops] = useState([]);
   const [singleShop, setSingleShop] = useState({});
-  const ID = parseInt(id);
+  const ID = id;
+
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    fetch("https://fakestoreapi.com/products/")
-      .then((res) => res.json())
-      .then((data) => setShops(data));
+    setLoading(true);
+    //create the query
+    const q = query(collection(db, "Shops"));
+    //create listener
+    const bannerListenerSubscription = onSnapshot(q, (querySnapShot) => {
+      const list = [];
+      querySnapShot.forEach((doc) => {
+        list.push({ ...doc.data(), id: doc.id });
+      });
+      setShops(list);
+      setLoading(false);
+    });
+    return bannerListenerSubscription;
   }, []);
-
   useEffect(() => {
     const foundService = shops.find((service) => service.id === ID);
     setSingleShop(foundService);
@@ -23,7 +36,7 @@ const DetailsShop = () => {
   return (
     <>
       <div className="shopBannerContainer">
-        <BannerTitle title1="Shop" title2="Nehal Machinery Ltd" />
+        <BannerTitle title1="Shop" title2="Nehal shop Ltd" />
       </div>
       <div className="container mt-5">
         <div className="row">
@@ -31,7 +44,7 @@ const DetailsShop = () => {
             <img
               style={{ width: "100%", borderRadius: "20px", height: "600px" }}
               variant="top"
-              src={singleShop?.image}
+              src={singleShop?.img}
               alt=""
             />
           </div>
@@ -42,14 +55,23 @@ const DetailsShop = () => {
                 fontWeight: "bold",
               }}>
               {" "}
-              {singleShop?.title}
+              {singleShop?.name}
             </h1>
             <hr />
             <p
               style={{
-                fontSize: "32px",
+                fontSize: "24px",
                 marginTop: "20px",
-                textAlign: "left",
+                fontWeight: "bold",
+              }}>
+              Price: {singleShop?.price}
+            </p>
+            <p
+              style={{
+                fontSize: "20px",
+                marginTop: "20px",
+                textAlign: "justify",
+                wordWrap: "break-word",
               }}>
               {singleShop?.description}
             </p>
@@ -116,15 +138,13 @@ const DetailsShop = () => {
           sliderClass=""
           slidesToSlide={1}
           swipeable>
-          {shops.map((machinery) => (
-            <div key={machinery.id}>
+          {shops.map((shop) => (
+            <div key={shop.id}>
               <div className="card h-100 p-3 me-4 mb-5">
-                <img src={machinery.image} alt="" style={{ height: "300px" }} />
-                <h6 className="mt-3">
-                  {`${machinery.title}`.slice(0, 12)}....
-                </h6>
+                <img src={shop.img} alt="" style={{ height: "300px" }} />
+                <h6 className="mt-3">{shop.name}</h6>
 
-                <Link to={`/machineries/${machinery.id}`}>
+                <Link to={`/shop/${shop.id}`}>
                   <Button
                     title="Details"
                     width="250px"
