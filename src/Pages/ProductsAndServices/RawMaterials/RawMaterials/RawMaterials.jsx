@@ -2,15 +2,28 @@ import React, { useEffect, useState } from "react";
 import BannerTitle from "../../../../Components/BannerTitle/BannerTitle";
 import "./RawMaterials.css";
 import RawMaterial from "../RawMaterial/RawMaterial";
+import { collection, onSnapshot, query } from "firebase/firestore";
+import { db } from "../../../../Hooks/useFirebase";
 
 const RawMaterials = () => {
-  const [molds, setMolds] = useState([]);
-  useEffect(() => {
-    fetch("https://fakestoreapi.com/products/")
-      .then((res) => res.json())
-      .then((data) => setMolds(data));
-  }, []);
+  const [rawMaterials, setRawMaterials] = useState([]);
+  const [loading, setLoading] = useState(false);
 
+  useEffect(() => {
+    setLoading(true);
+    //create the query
+    const q = query(collection(db, "RawMaterials"));
+    //create listener
+    const bannerListenerSubscription = onSnapshot(q, (querySnapShot) => {
+      const list = [];
+      querySnapShot.forEach((doc) => {
+        list.push({ ...doc.data(), id: doc.id });
+      });
+      setRawMaterials(list);
+      setLoading(false);
+    });
+    return bannerListenerSubscription;
+  }, []);
   return (
     <>
       <div className="rawMaterialsBannerContainer">
@@ -18,10 +31,10 @@ const RawMaterials = () => {
       </div>
       <div className="container">
         <div className="row">
-          {molds
-            .filter((mold) => mold.category === "women's clothing")
-            .map((mold) => (
-              <RawMaterial key={mold.id} mold={mold} />
+          {rawMaterials
+            .sort((a, b) => a.serial - b.serial)
+            .map((rawMaterial) => (
+              <RawMaterial key={rawMaterial.id} rawMaterial={rawMaterial} />
             ))}
         </div>
       </div>

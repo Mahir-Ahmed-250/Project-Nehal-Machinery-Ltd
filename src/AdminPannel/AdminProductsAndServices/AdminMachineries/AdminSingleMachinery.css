@@ -2,8 +2,9 @@
     position: relative;
     margin-bottom: -24px;
     background-color: burlywood;
-    width: 30px;
+    width: 20%;
     font-family: cursive;
+    text-align: center;
 }
 
 .editBtn {

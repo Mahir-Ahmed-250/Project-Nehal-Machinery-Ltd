@@ -2,8 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Button from "../../../../Components/Button/Button";
 
-const RawMaterial = ({ mold }) => {
-  const { id, title, image } = mold;
+const RawMaterial = ({ rawMaterial }) => {
+  const { id, name, img } = rawMaterial;
   return (
     <>
       <div
@@ -11,16 +11,15 @@ const RawMaterial = ({ mold }) => {
         data-aos="fade-in"
         data-aos-offset="200"
         data-aos-delay="50"
-        data-aos-duration="1000"
-      >
-        <div className="card h-100 p-4 shadow" style={{ borderRadius: "8%" }}>
-          <img src={image} alt="postsImage" style={{ height: "300px" }} />
+        data-aos-duration="1000">
+        <div className="card h-100 p-4 shadow" style={{ borderRadius: "3%" }}>
+          <img src={img} alt="postsImage" style={{ height: "300px" }} />
           <div className="card-body ">
-            <h5 className="card-title blog-title">{title}</h5>
+            <h5 className="card-title blog-title">{name}</h5>
           </div>
 
           <div className="mx-auto mb-4">
-            <Link to={`/molds/${id}`}>
+            <Link to={`/raw/${id}`}>
               <Button
                 title="Details"
                 width="200px"

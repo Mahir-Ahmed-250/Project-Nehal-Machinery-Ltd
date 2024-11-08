@@ -63,7 +63,7 @@ function MyVerticallyCenteredModal(props) {
 
         swal(
           "Well Done!",
-          "You have successfully Edited the member!",
+          "You have successfully Updated the Machinery!",
           "success",
           {
             buttons: {
@@ -91,7 +91,12 @@ function MyVerticallyCenteredModal(props) {
         });
       }
     } catch (err) {
-      console.log("err--->", err);
+      swal({
+        title: "Sorry",
+        text: "Image Size is Not Matched",
+        icon: "error",
+        button: "OK",
+      });
     }
   };
 
@@ -100,8 +105,7 @@ function MyVerticallyCenteredModal(props) {
       {...props}
       size="lg"
       aria-labelledby="contained-modal-title-vcenter"
-      centered
-    >
+      centered>
       <Modal.Header closeButton>
         <Modal.Title id="contained-modal-title-vcenter">
           {props.machinery.name}
@@ -142,8 +146,7 @@ function MyVerticallyCenteredModal(props) {
           <div className="imgAndDrop">
             <div
               class="file-drop-area"
-              style={{ border: "1px dashed #161616" }}
-            >
+              style={{ border: "1px dashed #161616" }}>
               <span>Choose files</span>
               <span class="file-message">or drag and drop files here</span>
               <input
@@ -204,7 +207,7 @@ const AdminSingleMachinery = ({ machinery }) => {
           onPressDelete(id);
           swal(
             "Success!",
-            "You have successfully Delete the Member!",
+            "You have successfully Delete the Machinery!",
             "success"
           );
           break;

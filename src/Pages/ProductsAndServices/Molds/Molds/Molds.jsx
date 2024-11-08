@@ -2,15 +2,28 @@ import React, { useEffect, useState } from "react";
 import BannerTitle from "../../../../Components/BannerTitle/BannerTitle";
 import Mold from "../Mold/Mold";
 import "./Molds.css";
+import { collection, onSnapshot, query } from "firebase/firestore";
+import { db } from "../../../../Hooks/useFirebase";
 
 const Molds = () => {
   const [molds, setMolds] = useState([]);
-  useEffect(() => {
-    fetch("https://fakestoreapi.com/products/")
-      .then((res) => res.json())
-      .then((data) => setMolds(data));
-  }, []);
+  const [loading, setLoading] = useState(false);
 
+  useEffect(() => {
+    setLoading(true);
+    //create the query
+    const q = query(collection(db, "Molds"));
+    //create listener
+    const bannerListenerSubscription = onSnapshot(q, (querySnapShot) => {
+      const list = [];
+      querySnapShot.forEach((doc) => {
+        list.push({ ...doc.data(), id: doc.id });
+      });
+      setMolds(list);
+      setLoading(false);
+    });
+    return bannerListenerSubscription;
+  }, []);
   return (
     <>
       <div className="moldsBannerContainer">
@@ -19,7 +32,7 @@ const Molds = () => {
       <div className="container">
         <div className="row">
           {molds
-            .filter((mold) => mold.category === "electronics")
+            .sort((a, b) => a.serial - b.serial)
             .map((mold) => (
               <Mold key={mold.id} mold={mold} />
             ))}

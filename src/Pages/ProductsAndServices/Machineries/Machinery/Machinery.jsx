@@ -11,11 +11,12 @@ const Machinery = ({ machinery }) => {
         data-aos="fade-in"
         data-aos-offset="200"
         data-aos-delay="50"
-        data-aos-duration="1000"
-      >
-        <div className="card h-100 p-4 shadow" style={{ borderRadius: "8%" }}>
+        data-aos-duration="1000">
+        <div
+          className="card h-100 p-4 shadow text-center"
+          style={{ borderRadius: "3%" }}>
           <img src={img} alt="postsImage" style={{ height: "300px" }} />
-          <div className="card-body ">
+          <div className="card-body">
             <h5 className="card-name blog-name">{name}</h5>
           </div>
 

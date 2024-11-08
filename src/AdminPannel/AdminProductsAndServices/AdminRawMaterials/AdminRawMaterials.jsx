@@ -1,15 +1,14 @@
+import { addDoc, collection, onSnapshot, query } from "firebase/firestore";
 import React, { useEffect, useState } from "react";
+import { db } from "../../../Hooks/useFirebase";
+import swal from "sweetalert";
 import BannerTitle from "../../../Components/BannerTitle/BannerTitle";
 import AdminNavigation from "../../Components/AdminNavigation/AdminNavigation";
 import LoadingSkeleton from "../../Components/LoadingSkeleton/LoadingSkeleton";
-import swal from "sweetalert";
-import { db } from "../../../Hooks/useFirebase";
-import { addDoc, collection, onSnapshot, query } from "firebase/firestore";
-
+import AdminSingleRawMaterial from "./AdminSingleRawMaterial";
 import loadingImg from "../../../Assets/logo.png";
-import AdminSingleMachinery from "./AdminSingleMachinery";
 
-const AdminMachinery = () => {
+const AdminRawMaterials = () => {
   const [serial, setSerial] = useState("");
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
@@ -57,7 +56,7 @@ const AdminMachinery = () => {
     setLoading(true);
     try {
       if (baseImage && serial && name && description) {
-        await addDoc(collection(db, "Machinery"), {
+        await addDoc(collection(db, "RawMaterials"), {
           serial: serial,
           name: name,
           description: description,
@@ -70,13 +69,13 @@ const AdminMachinery = () => {
 
         swal(
           "Well Done!",
-          "You have successfully Uploaded a Machinery!",
+          "You have successfully Uploaded a Raw Materials!",
           "success",
           {
             buttons: {
               cancel: "Cancel",
               catch: {
-                text: "Go to Machinery",
+                text: "Go to Raw Materials",
                 value: "catch",
               },
             },
@@ -84,7 +83,7 @@ const AdminMachinery = () => {
         ).then((value) => {
           switch (value) {
             case "catch":
-              window.location.href = "/machineries";
+              window.location.href = "/raw";
 
               break;
             default:
@@ -99,23 +98,28 @@ const AdminMachinery = () => {
         });
       }
     } catch (error) {
-      console.log("error--->", error);
+      swal({
+        title: "Sorry",
+        text: "Image Size is Not Matched",
+        icon: "error",
+        button: "OK",
+      });
     }
     setLoading(false);
   };
 
-  const [machineries, setMachinery] = useState([]);
+  const [rawMaterials, setRawMaterials] = useState([]);
   useEffect(() => {
     setLoading2(true);
     //create the query
-    const q = query(collection(db, "Machinery"));
+    const q = query(collection(db, "RawMaterials"));
     //create listener
     const teamListenerSubscription = onSnapshot(q, (querySnapShot) => {
       const list = [];
       querySnapShot.forEach((doc) => {
         list.push({ ...doc.data(), id: doc.id });
       });
-      setMachinery(list);
+      setRawMaterials(list);
       setLoading2(false);
     });
     return teamListenerSubscription;
@@ -160,7 +164,7 @@ const AdminMachinery = () => {
     <>
       <>
         <div style={{ paddingTop: "12%" }} className="container">
-          <BannerTitle title1="Current Machinery" />
+          <BannerTitle title1="Current Raw Materials" />
           <AdminNavigation />
           <div className="row">
             {loading2 ? (
@@ -169,73 +173,68 @@ const AdminMachinery = () => {
               </>
             ) : (
               <>
-                {machineries
+                {rawMaterials
                   .sort((a, b) => a.serial - b.serial)
-                  .map((machinery) => (
-                    <AdminSingleMachinery
-                      key={machinery.id}
-                      machinery={machinery}
+                  .map((rawMaterial) => (
+                    <AdminSingleRawMaterial
+                      key={rawMaterial.id}
+                      rawMaterial={rawMaterial}
                     />
                   ))}
               </>
             )}
           </div>
-          <div className="pb-5" style={{ marginTop: "80px" }}>
-            <BannerTitle title1="Upload a new Machinery" />
-            <div className="pb-5" style={{ marginTop: "80px" }}>
-              <BannerTitle title="Upload a new Team member" />
-              <div>
-                <input
-                  type="number"
-                  id="form3Example3"
-                  className="form-control form-control-lg mb-2 w-25"
-                  onChange={handleSerial}
-                  onKeyPress={(event) => {
-                    if (!/[0-9]/.test(event.key)) {
-                      event.preventDefault();
-                    }
-                  }}
-                  placeholder="Serial"
-                />
-                <input
-                  type="text"
-                  id="form3Example3"
-                  className="form-control form-control-lg mb-2 w-50"
-                  onChange={handleName}
-                  placeholder="Name"
-                />
+          <div className="pb-5" style={{ marginTop: "180px" }}>
+            <BannerTitle title1="Upload a new Raw Materials" />
+            <div>
+              <input
+                type="number"
+                id="form3Example3"
+                className="form-control form-control-lg mb-2 w-25"
+                onChange={handleSerial}
+                onKeyPress={(event) => {
+                  if (!/[0-9]/.test(event.key)) {
+                    event.preventDefault();
+                  }
+                }}
+                placeholder="Serial"
+              />
+              <input
+                type="text"
+                id="form3Example3"
+                className="form-control form-control-lg mb-2 w-50"
+                onChange={handleName}
+                placeholder="Name"
+              />
 
-                <textarea
-                  type="textarea"
-                  rows="10"
-                  cols="50"
-                  id="form3Example3"
-                  className="form-control form-control-lg mb-2 w-100"
-                  onChange={handleDescription}
-                  placeholder="Description"
-                />
+              <textarea
+                type="textarea"
+                rows="10"
+                cols="50"
+                id="form3Example3"
+                className="form-control form-control-lg mb-2 w-100"
+                onChange={handleDescription}
+                placeholder="Description"
+              />
 
-                <div className="imgAndDrop">
-                  <div class="file-drop-area">
-                    <span class="choose-file-button">Choose files</span>
-                    <span class="file-message">
-                      or drag and drop files here
-                    </span>
-                    <input
-                      class="file-input"
-                      type="file"
-                      multiple
-                      onChange={(e) => {
-                        uploadImage(e);
-                      }}
-                    />
-                  </div>
-                  <img src={baseImage} height="200px" alt="" />
+              <div className="imgAndDrop">
+                <div class="file-drop-area">
+                  <span class="choose-file-button">Choose files</span>
+                  <span class="file-message">or drag and drop files here</span>
+                  <input
+                    class="file-input"
+                    type="file"
+                    multiple
+                    onChange={(e) => {
+                      uploadImage(e);
+                    }}
+                  />
                 </div>
-                <button className="uploadBtn" onClick={onClickCreate}>
-                  Upload
-                </button>
+                <img src={baseImage} height="200px" alt="" />
               </div>
+              <button className="uploadBtn" onClick={onClickCreate}>
+                Upload
+              </button>
             </div>
           </div>
         </div>
@@ -244,4 +243,4 @@ const AdminMachinery = () => {
   );
 };
 
-export default AdminMachinery;
+export default AdminRawMaterials;

@@ -11,23 +11,24 @@ const HomeMachinery = ({ product }) => {
           data-aos="fade-in"
           data-aos-offset="200"
           data-aos-delay="50"
-          data-aos-duration="1000"
-        >
+          data-aos-duration="1000">
           <div
-            class="card p-5 text-center shadow"
-            style={{ borderRadius: "5%" }}
-          >
+            class="card text-center shadow"
+            style={{
+              borderRadius: "2%",
+              border: "2px solid",
+            }}>
             <img
               src={img}
               alt="postsImage"
               className="card-img-top"
-              style={{ height: "300px" }}
+              style={{ height: "300px", width: "100%" }}
             />
 
             <div class="card-body">
-              <h5 style={{ height: "50px" }}>{name}</h5>
+              <h5 style={{ height: "50px", wordWrap: "break-word" }}>{name}</h5>
             </div>
-            <Link className="mt-4" to={`/machineries/${id}`}>
+            <Link className="mt-4 mb-4" to={`/machineries/${id}`}>
               <Button
                 title="Details"
                 width="200px"

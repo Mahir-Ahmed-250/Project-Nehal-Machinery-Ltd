@@ -6,39 +6,38 @@ import Carousel from "react-multi-carousel";
 import { collection, onSnapshot, query } from "firebase/firestore";
 import { db } from "../../../../Hooks/useFirebase";
 
-const DetailsMachinery = () => {
+const DetailsRawMaterials = () => {
   const { id } = useParams();
-  const [machineries, setMachineries] = useState([]);
-  const [singleMachinery, setSingleMachinery] = useState({});
+  const [rawMaterials, setRawMaterialss] = useState([]);
+  const [singleRawMaterials, setSingleRawMaterials] = useState({});
   const ID = id;
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     setLoading(true);
     //create the query
-    const q = query(collection(db, "Machinery"));
+    const q = query(collection(db, "RawMaterials"));
     //create listener
     const bannerListenerSubscription = onSnapshot(q, (querySnapShot) => {
       const list = [];
       querySnapShot.forEach((doc) => {
         list.push({ ...doc.data(), id: doc.id });
       });
-      setMachineries(list);
+      setRawMaterialss(list);
       setLoading(false);
-      console.log(machineries);
     });
     return bannerListenerSubscription;
   }, []);
 
   useEffect(() => {
-    const foundService = machineries.find((service) => service.id === ID);
-    setSingleMachinery(foundService);
-  }, [ID, machineries]);
+    const foundService = rawMaterials.find((service) => service.id === ID);
+    setSingleRawMaterials(foundService);
+  }, [ID, rawMaterials]);
 
   return (
     <>
-      <div className="machineryBannerContainer">
-        <BannerTitle title1="Machineries" title2="Nehal Machinery Ltd" />
+      <div className="rawMaterialsBannerContainer">
+        <BannerTitle title1="Raw Materials" title2="Nehal Machinery Ltd" />
       </div>
       <div className="container mt-5">
         <div className="row">
@@ -46,7 +45,7 @@ const DetailsMachinery = () => {
             <img
               style={{ width: "100%", borderRadius: "20px", height: "600px" }}
               variant="top"
-              src={singleMachinery?.img}
+              src={singleRawMaterials?.img}
               alt=""
             />
           </div>
@@ -58,7 +57,7 @@ const DetailsMachinery = () => {
                 wordWrap: "break-word",
               }}>
               {" "}
-              {singleMachinery?.name}
+              {singleRawMaterials?.name}
             </h1>
             <hr />
             <p
@@ -68,7 +67,7 @@ const DetailsMachinery = () => {
                 textAlign: "justify",
                 wordWrap: "break-word",
               }}>
-              {singleMachinery?.description}
+              {singleRawMaterials?.description}
             </p>
           </div>
         </div>
@@ -80,7 +79,7 @@ const DetailsMachinery = () => {
             marginTop: "20px",
             fontWeight: "bold",
           }}>
-          Related Machinery
+          Related Raw Materials
         </h2>
         <hr />
         <Carousel
@@ -134,13 +133,13 @@ const DetailsMachinery = () => {
           sliderClass=""
           slidesToSlide={1}
           swipeable>
-          {machineries.map((machinery) => (
+          {rawMaterials.map((machinery) => (
             <div key={machinery.id}>
               <div className="card h-100 p-3 me-4 mb-5">
                 <img src={machinery.img} alt="" style={{ height: "300px" }} />
                 <h6 className="mt-3">{`${machinery.name}`}</h6>
 
-                <Link to={`/machineries/${machinery.id}`}>
+                <Link to={`/raw/${rawMaterials.id}`}>
                   <Button
                     title="Details"
                     width="250px"
@@ -158,4 +157,4 @@ const DetailsMachinery = () => {
   );
 };
 
-export default DetailsMachinery;
+export default DetailsRawMaterials;

@@ -31,9 +31,11 @@ const Machineries = () => {
       </div>
       <div className="container">
         <div className="row">
-          {machineries.map((machinery) => (
-            <Machinery key={machinery.id} machinery={machinery} />
-          ))}
+          {machineries
+            .sort((a, b) => a.serial - b.serial)
+            .map((machinery) => (
+              <Machinery key={machinery.id} machinery={machinery} />
+            ))}
         </div>
       </div>
     </>

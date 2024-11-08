@@ -26,10 +26,7 @@ const AdminProductsAndServicesHome = () => {
                 </Link>
               </div>
               <div className="col-lg-6">
-                <Link
-                  to="/admin/products&services"
-                  style={{ textDecoration: "none" }}
-                >
+                <Link to="/admin/mold" style={{ textDecoration: "none" }}>
                   <div className="adminNavigation">
                     <h2 className="homeNavigationTitle">Molds</h2>
                     <h6 className="homeNavigationText">
@@ -39,10 +36,7 @@ const AdminProductsAndServicesHome = () => {
                 </Link>
               </div>
               <div className="col-lg-6">
-                <Link
-                  to="/admin/homePortfolio"
-                  style={{ textDecoration: "none" }}
-                >
+                <Link to="/admin/raw" style={{ textDecoration: "none" }}>
                   <div className="adminNavigation">
                     <h2 className="homeNavigationTitle">Raw Materials</h2>
                     <h6 className="homeNavigationText">

@@ -30,7 +30,11 @@ import AdminHome from "./AdminPannel/AdminHome/AdminHome";
 import AdminHomeBanner from "./AdminPannel/AdminHomeBanner/AdminHomeBanner";
 import loadingImg from "./Assets/logo.png";
 import AdminProductsAndServicesHome from "./AdminPannel/AdminProductsAndServices/AdminProductsAndServicesHome/AdminProductsAndServicesHome";
-import AdminMachinery from "./AdminPannel/AdminProductsAndServices/AdminMachinery/AdminMachinery";
+
+import AdminRawMaterials from "./AdminPannel/AdminProductsAndServices/AdminRawMaterials/AdminRawMaterials";
+import DetailsRawMaterials from "./Pages/ProductsAndServices/RawMaterials/DetailsRawMaterials/DetailsRawMaterials";
+import AdminMolds from "./AdminPannel/AdminProductsAndServices/AdminMolds/AdminMolds";
+import AdminMachineries from "./AdminPannel/AdminProductsAndServices/AdminMachineries/AdminMachineries";
 function App() {
   const Wrapper = ({ children }) => {
     const location = useLocation();
@@ -65,6 +69,7 @@ function App() {
               <Route path="/molds" element={<Molds />} />
               <Route path="/molds/:id" element={<DetailsMold />} />
               <Route path="/raw" element={<RawMaterials />} />
+              <Route path="/raw/:id" element={<DetailsRawMaterials />} />
               <Route path="/erection" element={<Erection />} />
               <Route path="/consultancy" element={<ConsultancyService />} />
               <Route path="/others" element={<Others />} />
@@ -81,7 +86,9 @@ function App() {
                 path="/admin/products&services"
                 element={<AdminProductsAndServicesHome />}
               />
-              <Route path="/admin/machinery" element={<AdminMachinery />} />
+              <Route path="/admin/machinery" element={<AdminMachineries />} />
+              <Route path="/admin/mold" element={<AdminMolds />} />
+              <Route path="/admin/raw" element={<AdminRawMaterials />} />
               <Route path="*" element={<Navigate to="/" replace />} />
             </>
           ) : (

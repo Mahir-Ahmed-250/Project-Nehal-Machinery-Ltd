@@ -33,9 +33,12 @@ const HomeMachineries = () => {
       <Title title="Our Machineries" />
       <div className="container text-left">
         <div className="row mt-3" data-aos="fade-up" data-aos-duration="1000">
-          {products.slice(0, 6).map((product) => (
-            <HomeMachinery key={product.id} product={product}></HomeMachinery>
-          ))}
+          {products
+            .sort((a, b) => a.serial - b.serial)
+            .slice(0, 6)
+            .map((product) => (
+              <HomeMachinery key={product.id} product={product}></HomeMachinery>
+            ))}
           <div className="row mt-4">
             <div className="text-center">
               <Link to="/machineries">
