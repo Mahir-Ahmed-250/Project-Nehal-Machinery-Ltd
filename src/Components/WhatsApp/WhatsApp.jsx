@@ -7,7 +7,7 @@ const WhatsApp = () => {
   return (
     <>
       <FloatingWhatsApp
-        phoneNumber="+8801329681886"
+        phoneNumber="+8801725046048"
         accountName="Nehal Machinery Ltd"
         avatar={logo}
         allowEsc

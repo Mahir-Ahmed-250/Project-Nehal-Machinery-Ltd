@@ -1,25 +1,27 @@
 .title1 {
     font-weight: 700;
     font-size: 80px;
-    text-shadow: 2px 5px 5px #f8f6f6;
+    text-shadow: 2px 2px 2px #f8f6f6;
     text-align: center;
     position: relative;
     top: 50%;
-    -webkit-text-stroke-width: 4px;
-    -webkit-text-stroke-color: rgb(0, 0, 0);
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: #ffff;
     transform: translateY(-50%);
+    color: #ffff;
 }
 
 .title2 {
     font-weight: 500;
     font-size: 50px;
-    text-shadow: 2px 5px 5px #f8f6f6;
+    text-shadow: 2px 2px 2px #f8f6f6;
     text-align: center;
     position: relative;
     top: 45%;
     transform: translateY(-50%);
-    -webkit-text-stroke-width: 3px;
-    -webkit-text-stroke-color: black;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: #ffff;
+    color: #ffff;
 }
 
 @media screen and (max-width: 768px) {

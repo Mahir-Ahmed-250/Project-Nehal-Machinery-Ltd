@@ -12,9 +12,9 @@
     text-align: center;
     margin-top: -450px;
     z-index: 1;
-    color: #fffafa;
-    text-shadow: 4px 4px 4px #2b2828;
-    ;
+    color: #000;
+    text-shadow: 2px 2px 4px #bebbbb;
+
 }
 
 .bannerText {
