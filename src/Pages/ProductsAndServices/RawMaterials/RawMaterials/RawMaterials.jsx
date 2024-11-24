@@ -4,6 +4,7 @@ import "./RawMaterials.css";
 import RawMaterial from "../RawMaterial/RawMaterial";
 import { collection, onSnapshot, query } from "firebase/firestore";
 import { db } from "../../../../Hooks/useFirebase";
+import LoadingSkeleton from "../../../../AdminPannel/Components/LoadingSkeleton/LoadingSkeleton";
 
 const RawMaterials = () => {
   const [rawMaterials, setRawMaterials] = useState([]);
@@ -29,15 +30,24 @@ const RawMaterials = () => {
       <div className="rawMaterialsBannerContainer">
         <BannerTitle title1="Raw Materials" title2="Nehal Machinery Ltd" />
       </div>
-      <div className="container">
-        <div className="row">
-          {rawMaterials
-            .sort((a, b) => a.serial - b.serial)
-            .map((rawMaterial) => (
-              <RawMaterial key={rawMaterial.id} rawMaterial={rawMaterial} />
-            ))}
+      {loading ? (
+        <div className="container mt-4">
+          <LoadingSkeleton />
         </div>
-      </div>
+      ) : (
+        <>
+          {" "}
+          <div className="container">
+            <div className="row">
+              {rawMaterials
+                .sort((a, b) => a.serial - b.serial)
+                .map((rawMaterial) => (
+                  <RawMaterial key={rawMaterial.id} rawMaterial={rawMaterial} />
+                ))}
+            </div>
+          </div>
+        </>
+      )}
     </>
   );
 };

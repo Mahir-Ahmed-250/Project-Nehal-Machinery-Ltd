@@ -19,7 +19,7 @@ const Other = ({ other }) => {
           </div>
 
           <div className="mx-auto mb-4">
-            <Link to={`/others/${id}`}>
+            <Link to={`/other/${id}`}>
               <Button
                 title="Details"
                 width="200px"

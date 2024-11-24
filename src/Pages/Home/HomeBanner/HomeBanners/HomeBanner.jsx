@@ -30,13 +30,13 @@ const HomeBanner = () => {
   return (
     <>
       {loading ? (
-        <div className="loader">
+        <center className="loader">
           <div className="loaderContainer ">
             <div className="box1"></div>
             <div className="box2"></div>
             <div className="box3"></div>
           </div>
-        </div>
+        </center>
       ) : (
         <>
           {" "}
@@ -44,8 +44,7 @@ const HomeBanner = () => {
             style={{
               paddingBottom: "30px",
               position: "relative",
-            }}
-          >
+            }}>
             <Carousel
               additionalTransfrom={0}
               arrows={true}
@@ -94,8 +93,7 @@ const HomeBanner = () => {
               showDots
               sliderclassName=""
               slidesToSlide={1}
-              swipeable
-            >
+              swipeable>
               {banners.map((banner) => (
                 <div key={banner.id}>
                   <img src={banner.img} className="bannerImg" alt="" />

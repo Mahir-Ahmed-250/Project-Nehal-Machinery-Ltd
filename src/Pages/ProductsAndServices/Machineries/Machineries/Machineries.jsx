@@ -4,6 +4,7 @@ import BannerTitle from "../../../../Components/BannerTitle/BannerTitle";
 import Machinery from "../Machinery/Machinery";
 import { collection, onSnapshot, query } from "firebase/firestore";
 import { db } from "../../../../Hooks/useFirebase";
+import LoadingSkeleton from "../../../../AdminPannel/Components/LoadingSkeleton/LoadingSkeleton";
 
 const Machineries = () => {
   const [machineries, setMachineries] = useState([]);
@@ -29,15 +30,23 @@ const Machineries = () => {
       <div className="machineryBannerContainer">
         <BannerTitle title1="Machineries" title2="Nehal Machinery Ltd" />
       </div>
-      <div className="container">
-        <div className="row">
-          {machineries
-            .sort((a, b) => a.serial - b.serial)
-            .map((machinery) => (
-              <Machinery key={machinery.id} machinery={machinery} />
-            ))}
+      {loading ? (
+        <div className="container mt-5">
+          <LoadingSkeleton />
         </div>
-      </div>
+      ) : (
+        <>
+          <div className="container">
+            <div className="row">
+              {machineries
+                .sort((a, b) => a.serial - b.serial)
+                .map((machinery) => (
+                  <Machinery key={machinery.id} machinery={machinery} />
+                ))}
+            </div>
+          </div>
+        </>
+      )}
     </>
   );
 };

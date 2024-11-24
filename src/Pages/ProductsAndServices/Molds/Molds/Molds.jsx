@@ -4,6 +4,7 @@ import Mold from "../Mold/Mold";
 import "./Molds.css";
 import { collection, onSnapshot, query } from "firebase/firestore";
 import { db } from "../../../../Hooks/useFirebase";
+import LoadingSkeleton from "../../../../AdminPannel/Components/LoadingSkeleton/LoadingSkeleton";
 
 const Molds = () => {
   const [molds, setMolds] = useState([]);
@@ -29,15 +30,24 @@ const Molds = () => {
       <div className="moldsBannerContainer">
         <BannerTitle title1="Molds" title2="Nehal Machinery Ltd" />
       </div>
-      <div className="container">
-        <div className="row">
-          {molds
-            .sort((a, b) => a.serial - b.serial)
-            .map((mold) => (
-              <Mold key={mold.id} mold={mold} />
-            ))}
+      {loading ? (
+        <div className="container mt-5">
+          <LoadingSkeleton />
         </div>
-      </div>
+      ) : (
+        <>
+          {" "}
+          <div className="container">
+            <div className="row">
+              {molds
+                .sort((a, b) => a.serial - b.serial)
+                .map((mold) => (
+                  <Mold key={mold.id} mold={mold} />
+                ))}
+            </div>
+          </div>
+        </>
+      )}
     </>
   );
 };

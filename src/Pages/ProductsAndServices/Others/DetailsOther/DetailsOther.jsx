@@ -54,8 +54,7 @@ const DetailsOther = () => {
               style={{
                 marginTop: "20px",
                 fontWeight: "bold",
-              }}
-            >
+              }}>
               {" "}
               {singleMold?.name}
             </h1>
@@ -65,8 +64,7 @@ const DetailsOther = () => {
                 fontSize: "32px",
                 marginTop: "20px",
                 textAlign: "left",
-              }}
-            >
+              }}>
               {singleMold?.description}
             </p>
           </div>
@@ -78,8 +76,7 @@ const DetailsOther = () => {
             fontSize: "55px",
             marginTop: "20px",
             fontWeight: "bold",
-          }}
-        >
+          }}>
           Other Products
         </h2>
         <Carousel
@@ -131,15 +128,14 @@ const DetailsOther = () => {
           showDots={false}
           sliderclassName=""
           slidesToSlide={1}
-          swipeable
-        >
+          swipeable>
           {others.map((other) => (
             <div key={other.id}>
               <div className="card h-100 p-3 me-4 mb-5">
                 <img src={other.img} alt="" style={{ height: "300px" }} />
                 <h6 className="mt-3">{other.name}</h6>
 
-                <Link to={`/machineries/${other.id}`}>
+                <Link to={`/other/${other.id}`}>
                   <Button
                     title="Details"
                     width="250px"

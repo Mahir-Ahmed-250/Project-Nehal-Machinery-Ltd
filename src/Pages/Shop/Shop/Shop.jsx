@@ -4,6 +4,7 @@ import BannerTitle from "../../../Components/BannerTitle/BannerTitle";
 import SingleShop from "../SingleShop/SingleShop";
 import { collection, onSnapshot, query } from "firebase/firestore";
 import { db } from "../../../Hooks/useFirebase";
+import LoadingSkeleton from "../../../AdminPannel/Components/LoadingSkeleton/LoadingSkeleton";
 
 const Shop = () => {
   const [shops, setShops] = useState([]);
@@ -30,13 +31,22 @@ const Shop = () => {
       <div className="shopBannerContainer">
         <BannerTitle title1="Shop" title2="Nehal Machinery Ltd" />
       </div>
-      <div className="container">
-        <div className="row">
-          {shops.map((shop) => (
-            <SingleShop key={shop.id} shop={shop} />
-          ))}
+      {loading ? (
+        <div className="container mt-4">
+          <LoadingSkeleton />
         </div>
-      </div>
+      ) : (
+        <>
+          {" "}
+          <div className="container">
+            <div className="row">
+              {shops.map((shop) => (
+                <SingleShop key={shop.id} shop={shop} />
+              ))}
+            </div>
+          </div>
+        </>
+      )}
     </>
   );
 };

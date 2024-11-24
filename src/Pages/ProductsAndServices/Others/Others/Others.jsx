@@ -3,6 +3,7 @@ import BannerTitle from "../../../../Components/BannerTitle/BannerTitle";
 import Other from "../Other/Other";
 import { collection, onSnapshot, query } from "firebase/firestore";
 import { db } from "../../../../Hooks/useFirebase";
+import LoadingSkeleton from "../../../../AdminPannel/Components/LoadingSkeleton/LoadingSkeleton";
 
 const Others = () => {
   const [others, setOthers] = useState([]);
@@ -28,15 +29,23 @@ const Others = () => {
       <div className="moldsBannerContainer">
         <BannerTitle title1="Others" title2="Nehal Machinery Ltd" />
       </div>
-      <div className="container">
-        <div className="row">
-          {others
-            .sort((a, b) => a.serial - b.serial)
-            .map((other) => (
-              <Other key={other.id} other={other} />
-            ))}
+      {loading ? (
+        <div className="container mt-4">
+          <LoadingSkeleton />
         </div>
-      </div>
+      ) : (
+        <>
+          <div className="container">
+            <div className="row">
+              {others
+                .sort((a, b) => a.serial - b.serial)
+                .map((other) => (
+                  <Other key={other.id} other={other} />
+                ))}
+            </div>
+          </div>
+        </>
+      )}
     </>
   );
 };
