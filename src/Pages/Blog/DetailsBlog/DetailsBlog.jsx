@@ -48,7 +48,8 @@ const DetailsBlog = () => {
                 marginTop: "20px",
                 fontWeight: "bold",
               }}
-              className="treatment">
+              className="treatment"
+            >
               {" "}
               {singleBlog?.name}
             </h1>
@@ -66,7 +67,8 @@ const DetailsBlog = () => {
             fontSize: "55px",
             marginTop: "20px",
             fontWeight: "bold",
-          }}>
+          }}
+        >
           Related Blogs
         </h2>
         <Carousel
@@ -74,12 +76,12 @@ const DetailsBlog = () => {
           autoPlay
           autoPlaySpeed={3000}
           className=""
-          containerClass="container-with-dots"
-          dotListClass=""
+          containerclassName="container-with-dots"
+          dotListclassName=""
           draggable
           focusOnSelect={false}
           infinite
-          itemClass=""
+          itemclassName=""
           keyBoardControl
           minimumTouchDrag={80}
           pauseOnHover={true}
@@ -117,9 +119,10 @@ const DetailsBlog = () => {
           rtl={false}
           shouldResetAutoplay
           showDots={false}
-          sliderClass=""
+          sliderclassName=""
           slidesToSlide={1}
-          swipeable>
+          swipeable
+        >
           {blogs.map((blog) => (
             <div key={blog.id}>
               <div className="card p-3 me-4 mb-5">

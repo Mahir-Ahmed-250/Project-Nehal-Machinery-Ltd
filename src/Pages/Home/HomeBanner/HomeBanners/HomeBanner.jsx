@@ -31,10 +31,10 @@ const HomeBanner = () => {
     <>
       {loading ? (
         <div className="loader">
-          <div class="loaderContainer ">
-            <div class="box1"></div>
-            <div class="box2"></div>
-            <div class="box3"></div>
+          <div className="loaderContainer ">
+            <div className="box1"></div>
+            <div className="box2"></div>
+            <div className="box3"></div>
           </div>
         </div>
       ) : (
@@ -52,12 +52,12 @@ const HomeBanner = () => {
               autoPlaySpeed={3000}
               centerMode={false}
               className=""
-              containerClass=""
-              dotListClass=""
+              containerclassName=""
+              dotListclassName=""
               draggable
               focusOnSelect={false}
               infinite
-              itemClass=""
+              itemclassName=""
               keyBoardControl
               minimumTouchDrag={80}
               pauseOnHover
@@ -92,7 +92,7 @@ const HomeBanner = () => {
               rtl={false}
               shouldResetAutoplay
               showDots
-              sliderClass=""
+              sliderclassName=""
               slidesToSlide={1}
               swipeable
             >

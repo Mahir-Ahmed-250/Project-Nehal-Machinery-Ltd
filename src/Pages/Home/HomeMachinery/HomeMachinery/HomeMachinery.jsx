@@ -11,13 +11,15 @@ const HomeMachinery = ({ product }) => {
           data-aos="fade-in"
           data-aos-offset="200"
           data-aos-delay="50"
-          data-aos-duration="1000">
+          data-aos-duration="1000"
+        >
           <div
-            class="card text-center shadow"
+            className="card text-center shadow"
             style={{
               borderRadius: "2%",
               border: "2px solid",
-            }}>
+            }}
+          >
             <img
               src={img}
               alt="postsImage"
@@ -29,7 +31,8 @@ const HomeMachinery = ({ product }) => {
               style={{
                 wordWrap: "break-word",
                 marginTop: "15px",
-              }}>
+              }}
+            >
               {name}
             </h5>
 

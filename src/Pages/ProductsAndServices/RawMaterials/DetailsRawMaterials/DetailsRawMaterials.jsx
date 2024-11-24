@@ -55,7 +55,8 @@ const DetailsRawMaterials = () => {
                 marginTop: "20px",
                 fontWeight: "bold",
                 wordWrap: "break-word",
-              }}>
+              }}
+            >
               {" "}
               {singleRawMaterials?.name}
             </h1>
@@ -66,7 +67,8 @@ const DetailsRawMaterials = () => {
                 marginTop: "20px",
                 textAlign: "justify",
                 wordWrap: "break-word",
-              }}>
+              }}
+            >
               {singleRawMaterials?.description}
             </p>
           </div>
@@ -78,7 +80,8 @@ const DetailsRawMaterials = () => {
             fontSize: "55px",
             marginTop: "20px",
             fontWeight: "bold",
-          }}>
+          }}
+        >
           Related Raw Materials
         </h2>
         <hr />
@@ -87,12 +90,12 @@ const DetailsRawMaterials = () => {
           autoPlay
           autoPlaySpeed={3000}
           className=""
-          containerClass="container-with-dots"
-          dotListClass=""
+          containerclassName="container-with-dots"
+          dotListclassName=""
           draggable
           focusOnSelect={false}
           infinite
-          itemClass=""
+          itemclassName=""
           keyBoardControl
           minimumTouchDrag={80}
           pauseOnHover={true}
@@ -130,9 +133,10 @@ const DetailsRawMaterials = () => {
           rtl={false}
           shouldResetAutoplay
           showDots={false}
-          sliderClass=""
+          sliderclassName=""
           slidesToSlide={1}
-          swipeable>
+          swipeable
+        >
           {rawMaterials.map((machinery) => (
             <div key={machinery.id}>
               <div className="card h-100 p-3 me-4 mb-5">

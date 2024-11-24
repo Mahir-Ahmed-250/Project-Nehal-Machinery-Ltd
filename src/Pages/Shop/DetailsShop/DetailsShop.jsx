@@ -53,7 +53,8 @@ const DetailsShop = () => {
               style={{
                 marginTop: "20px",
                 fontWeight: "bold",
-              }}>
+              }}
+            >
               {" "}
               {singleShop?.name}
             </h1>
@@ -63,7 +64,8 @@ const DetailsShop = () => {
                 fontSize: "24px",
                 marginTop: "20px",
                 fontWeight: "bold",
-              }}>
+              }}
+            >
               Price: {singleShop?.price}
             </p>
             <p
@@ -72,7 +74,8 @@ const DetailsShop = () => {
                 marginTop: "20px",
                 textAlign: "justify",
                 wordWrap: "break-word",
-              }}>
+              }}
+            >
               {singleShop?.description}
             </p>
           </div>
@@ -84,7 +87,8 @@ const DetailsShop = () => {
             fontSize: "55px",
             marginTop: "20px",
             fontWeight: "bold",
-          }}>
+          }}
+        >
           Related Products
         </h2>
         <Carousel
@@ -92,12 +96,12 @@ const DetailsShop = () => {
           autoPlay
           autoPlaySpeed={3000}
           className=""
-          containerClass="container-with-dots"
-          dotListClass=""
+          containerclassName="container-with-dots"
+          dotListclassName=""
           draggable
           focusOnSelect={false}
           infinite
-          itemClass=""
+          itemclassName=""
           keyBoardControl
           minimumTouchDrag={80}
           pauseOnHover={true}
@@ -135,9 +139,10 @@ const DetailsShop = () => {
           rtl={false}
           shouldResetAutoplay
           showDots={false}
-          sliderClass=""
+          sliderclassName=""
           slidesToSlide={1}
-          swipeable>
+          swipeable
+        >
           {shops.map((shop) => (
             <div key={shop.id}>
               <div className="card h-100 p-3 me-4 mb-5">

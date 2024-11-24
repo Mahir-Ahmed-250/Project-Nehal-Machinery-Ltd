@@ -5,10 +5,10 @@
     text-align: center;
     position: relative;
     top: 50%;
-    -webkit-text-stroke-width: 2px;
-    -webkit-text-stroke-color: #ffff;
     transform: translateY(-50%);
-    color: #ffff;
+    -webkit-text-stroke-width: 5px;
+    -webkit-text-stroke-color: #0f00000a;
+    color: #1313ffd5;
 }
 
 .title2 {
@@ -19,9 +19,9 @@
     position: relative;
     top: 45%;
     transform: translateY(-50%);
-    -webkit-text-stroke-width: 2px;
-    -webkit-text-stroke-color: #ffff;
-    color: #ffff;
+    -webkit-text-stroke-width: 5px;
+    -webkit-text-stroke-color: #0f00000a;
+    color: #1313ffd5;
 }
 
 @media screen and (max-width: 768px) {

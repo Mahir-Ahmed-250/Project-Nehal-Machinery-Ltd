@@ -56,7 +56,8 @@ const DetailsMachinery = () => {
                 marginTop: "20px",
                 fontWeight: "bold",
                 wordWrap: "break-word",
-              }}>
+              }}
+            >
               {" "}
               {singleMachinery?.name}
             </h1>
@@ -67,7 +68,8 @@ const DetailsMachinery = () => {
                 marginTop: "20px",
                 textAlign: "justify",
                 wordWrap: "break-word",
-              }}>
+              }}
+            >
               {singleMachinery?.description}
             </p>
           </div>
@@ -79,7 +81,8 @@ const DetailsMachinery = () => {
             fontSize: "55px",
             marginTop: "20px",
             fontWeight: "bold",
-          }}>
+          }}
+        >
           Related Machinery
         </h2>
         <hr />
@@ -88,12 +91,12 @@ const DetailsMachinery = () => {
           autoPlay
           autoPlaySpeed={3000}
           className=""
-          containerClass="container-with-dots"
-          dotListClass=""
+          containerclassName="container-with-dots"
+          dotListclassName=""
           draggable
           focusOnSelect={false}
           infinite
-          itemClass=""
+          itemclassName=""
           keyBoardControl
           minimumTouchDrag={80}
           pauseOnHover={true}
@@ -131,9 +134,10 @@ const DetailsMachinery = () => {
           rtl={false}
           shouldResetAutoplay
           showDots={false}
-          sliderClass=""
+          sliderclassName=""
           slidesToSlide={1}
-          swipeable>
+          swipeable
+        >
           {machineries.map((machinery) => (
             <div key={machinery.id}>
               <div className="card h-100 p-3 me-4 mb-5">

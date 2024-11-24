@@ -54,7 +54,8 @@ const DetailsOther = () => {
               style={{
                 marginTop: "20px",
                 fontWeight: "bold",
-              }}>
+              }}
+            >
               {" "}
               {singleMold?.name}
             </h1>
@@ -64,7 +65,8 @@ const DetailsOther = () => {
                 fontSize: "32px",
                 marginTop: "20px",
                 textAlign: "left",
-              }}>
+              }}
+            >
               {singleMold?.description}
             </p>
           </div>
@@ -76,7 +78,8 @@ const DetailsOther = () => {
             fontSize: "55px",
             marginTop: "20px",
             fontWeight: "bold",
-          }}>
+          }}
+        >
           Other Products
         </h2>
         <Carousel
@@ -84,8 +87,8 @@ const DetailsOther = () => {
           autoPlay
           autoPlaySpeed={3000}
           className=""
-          containerClass="container-with-dots"
-          dotListClass=""
+          containerclassName="container-with-dots"
+          dotListclassName=""
           draggable
           focusOnSelect={false}
           infinite
@@ -126,9 +129,10 @@ const DetailsOther = () => {
           rtl={false}
           shouldResetAutoplay
           showDots={false}
-          sliderClass=""
+          sliderclassName=""
           slidesToSlide={1}
-          swipeable>
+          swipeable
+        >
           {others.map((other) => (
             <div key={other.id}>
               <div className="card h-100 p-3 me-4 mb-5">

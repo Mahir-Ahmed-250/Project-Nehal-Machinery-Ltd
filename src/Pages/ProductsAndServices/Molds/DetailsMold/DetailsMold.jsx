@@ -54,7 +54,8 @@ const DetailsMold = () => {
                 marginTop: "20px",
                 fontWeight: "bold",
                 wordWrap: "break-word",
-              }}>
+              }}
+            >
               {" "}
               {singleMold?.name}
             </h1>
@@ -65,7 +66,8 @@ const DetailsMold = () => {
                 marginTop: "20px",
                 textAlign: "justify",
                 wordWrap: "break-word",
-              }}>
+              }}
+            >
               {singleMold?.description}
             </p>
           </div>
@@ -77,7 +79,8 @@ const DetailsMold = () => {
             fontSize: "55px",
             marginTop: "20px",
             fontWeight: "bold",
-          }}>
+          }}
+        >
           Related Molds
         </h2>
         <Carousel
@@ -85,12 +88,12 @@ const DetailsMold = () => {
           autoPlay
           autoPlaySpeed={3000}
           className=""
-          containerClass="container-with-dots"
-          dotListClass=""
+          containerclassName="container-with-dots"
+          dotListclassName=""
           draggable
           focusOnSelect={false}
           infinite
-          itemClass=""
+          itemclassName=""
           keyBoardControl
           minimumTouchDrag={80}
           pauseOnHover={true}
@@ -128,9 +131,10 @@ const DetailsMold = () => {
           rtl={false}
           shouldResetAutoplay
           showDots={false}
-          sliderClass=""
+          sliderclassName=""
           slidesToSlide={1}
-          swipeable>
+          swipeable
+        >
           {molds.map((mold) => (
             <div key={mold.id}>
               <div className="card h-100 p-3 me-4 mb-5">

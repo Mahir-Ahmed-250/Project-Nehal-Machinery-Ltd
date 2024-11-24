@@ -215,11 +215,13 @@ const AdminOthers = () => {
               />
 
               <div className="imgAndDrop">
-                <div class="file-drop-area">
-                  <span class="choose-file-button">Choose files</span>
-                  <span class="file-message">or drag and drop files here</span>
+                <div className="file-drop-area">
+                  <span className="choose-file-button">Choose files</span>
+                  <span className="file-message">
+                    or drag and drop files here
+                  </span>
                   <input
-                    class="file-input"
+                    className="file-input"
                     type="file"
                     multiple
                     onChange={(e) => {

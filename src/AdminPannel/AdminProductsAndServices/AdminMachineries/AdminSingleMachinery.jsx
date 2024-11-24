@@ -105,7 +105,8 @@ function MyVerticallyCenteredModal(props) {
       {...props}
       size="lg"
       aria-labelledby="contained-modal-title-vcenter"
-      centered>
+      centered
+    >
       <Modal.Header closeButton>
         <Modal.Title id="contained-modal-title-vcenter">
           {props.machinery.name}
@@ -145,12 +146,13 @@ function MyVerticallyCenteredModal(props) {
 
           <div className="imgAndDrop">
             <div
-              class="file-drop-area"
-              style={{ border: "1px dashed #161616" }}>
+              className="file-drop-area"
+              style={{ border: "1px dashed #161616" }}
+            >
               <span>Choose files</span>
-              <span class="file-message">or drag and drop files here</span>
+              <span className="file-message">or drag and drop files here</span>
               <input
-                class="file-input"
+                className="file-input"
                 type="file"
                 multiple
                 onChange={(e) => {
