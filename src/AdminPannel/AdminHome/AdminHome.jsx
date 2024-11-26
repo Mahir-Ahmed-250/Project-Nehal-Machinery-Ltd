@@ -54,7 +54,7 @@ const AdminHome = () => {
               </div>
 
               <div className="col-lg-6">
-                <Link to="/admin/portfolio" style={{ textDecoration: "none" }}>
+                <Link to="/admin/blog" style={{ textDecoration: "none" }}>
                   <div className="adminNavigation">
                     <h2 className="homeNavigationTitle">Blog</h2>
                     <h6 className="homeNavigationText">

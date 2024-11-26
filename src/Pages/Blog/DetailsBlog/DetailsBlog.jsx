@@ -26,10 +26,7 @@ const DetailsBlog = () => {
   return (
     <>
       <div className="blogBannerContainer">
-        <BannerTitle
-          title1={`Blog Name - ${singleBlog?.name}`}
-          title2="Nehal Machinery Ltd"
-        />
+        <BannerTitle title1="Blog" title2="Nehal Machinery Ltd" />
       </div>
       <div className="container mt-5">
         <div className="row">
@@ -48,8 +45,7 @@ const DetailsBlog = () => {
                 marginTop: "20px",
                 fontWeight: "bold",
               }}
-              className="treatment"
-            >
+              className="treatment">
               {" "}
               {singleBlog?.name}
             </h1>
@@ -67,8 +63,7 @@ const DetailsBlog = () => {
             fontSize: "55px",
             marginTop: "20px",
             fontWeight: "bold",
-          }}
-        >
+          }}>
           Related Blogs
         </h2>
         <Carousel
@@ -121,8 +116,7 @@ const DetailsBlog = () => {
           showDots={false}
           sliderclassName=""
           slidesToSlide={1}
-          swipeable
-        >
+          swipeable>
           {blogs.map((blog) => (
             <div key={blog.id}>
               <div className="card p-3 me-4 mb-5">

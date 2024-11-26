@@ -36,6 +36,7 @@ import AdminMolds from "./AdminPannel/AdminProductsAndServices/AdminMolds/AdminM
 import AdminMachineries from "./AdminPannel/AdminProductsAndServices/AdminMachineries/AdminMachineries";
 import AdminOthers from "./AdminPannel/AdminProductsAndServices/AdminOthers/AdminOthers";
 import AdminShops from "./AdminPannel/AdminShops/AdminShops";
+import AdminBlog from "./AdminPannel/AdminBlog/AdminBlog";
 
 function App() {
   const Wrapper = ({ children }) => {
@@ -93,6 +94,7 @@ function App() {
               <Route path="/admin/raw" element={<AdminRawMaterials />} />
               <Route path="/admin/other" element={<AdminOthers />} />
               <Route path="/admin/shop" element={<AdminShops />} />
+              <Route path="/admin/blog" element={<AdminBlog />} />
               <Route path="*" element={<Navigate to="/" replace />} />
             </>
           ) : (
