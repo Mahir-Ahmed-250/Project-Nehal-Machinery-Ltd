@@ -107,7 +107,7 @@ const AdminBlog = () => {
     }
     setLoading(false);
   };
-  const [blog, setBlog] = useState([]);
+  const [blogs, setBlogs] = useState([]);
   useEffect(() => {
     setLoading2(true);
     //create the query
@@ -118,7 +118,7 @@ const AdminBlog = () => {
       querySnapShot.forEach((doc) => {
         list.push({ ...doc.data(), id: doc.id });
       });
-      setBlog(list);
+      setBlogs(list);
       setLoading2(false);
     });
     return machineryListenerSubscription;
@@ -173,10 +173,10 @@ const AdminBlog = () => {
             ) : (
               <>
                 {" "}
-                {blog
+                {blogs
                   .sort((a, b) => a.serial - b.serial)
-                  .map((b) => (
-                    <AdminSingleBlog key={b.id} b={b} />
+                  .map((blog) => (
+                    <AdminSingleBlog key={blog.id} blog={blog} />
                   ))}
               </>
             )}
@@ -211,7 +211,7 @@ const AdminBlog = () => {
                 id="form3Example3"
                 className="form-control form-control-lg mb-2 w-100"
                 onChange={handleDescription}
-                placeholder="blog"
+                placeholder="Write a Blog"
               />
 
               <div className="imgAndDrop">

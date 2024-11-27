@@ -5,10 +5,10 @@ import swal from "sweetalert";
 import { db } from "../../Hooks/useFirebase";
 
 function MyVerticallyCenteredModal(props) {
-  const [serial, setSerial] = useState(props.b.serial);
-  const [name, setName] = useState(props.b.name);
-  const [description, setDescription] = useState(props.b.description);
-  const [baseImage, setBaseImage] = useState(props.b.img);
+  const [serial, setSerial] = useState(props.blog.serial);
+  const [name, setName] = useState(props.blog.name);
+  const [description, setDescription] = useState(props.blog.description);
+  const [baseImage, setBaseImage] = useState(props.blog.img);
 
   const handleSerial = (e) => {
     const result = e.target.value;
@@ -45,7 +45,7 @@ function MyVerticallyCenteredModal(props) {
     });
   };
   const onClickUpdate = async () => {
-    const bRef = doc(db, "b", props.b.id);
+    const bRef = doc(db, "Blog", props.blog.id);
     try {
       if (baseImage && serial && name && description) {
         await updateDoc(bRef, {
@@ -60,18 +60,23 @@ function MyVerticallyCenteredModal(props) {
         setDescription(description);
         setBaseImage(baseImage);
 
-        swal("Well Done!", "You have successfully Updated the b!", "success", {
-          buttons: {
-            cancel: "Cancel",
-            catch: {
-              text: "Go to b",
-              value: "catch",
+        swal(
+          "Well Done!",
+          "You have successfully Updated the blog!",
+          "success",
+          {
+            buttons: {
+              cancel: "Cancel",
+              catch: {
+                text: "Go to Blog",
+                value: "catch",
+              },
             },
-          },
-        }).then((value) => {
+          }
+        ).then((value) => {
           switch (value) {
             case "catch":
-              window.location.href = "/b";
+              window.location.href = "/blog";
               break;
             default:
           }
@@ -102,7 +107,7 @@ function MyVerticallyCenteredModal(props) {
       centered>
       <Modal.Header closeButton>
         <Modal.Title id="contained-modal-title-vcenter">
-          {props.b.name}
+          {props.blog.name}
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
@@ -116,7 +121,7 @@ function MyVerticallyCenteredModal(props) {
                 event.preventDefault();
               }
             }}
-            defaultValue={props.b.serial}
+            defaultValue={props.blog.serial}
             placeholder="Serial"
           />
 
@@ -124,7 +129,7 @@ function MyVerticallyCenteredModal(props) {
             type="text"
             className="form-control form-control-lg mb-2 w-100"
             onChange={handleName}
-            defaultValue={props.b.name}
+            defaultValue={props.blog.name}
             placeholder="Name"
           />
 
@@ -133,7 +138,7 @@ function MyVerticallyCenteredModal(props) {
             cols="10"
             className="form-control form-control-lg mb-2 w-100"
             onChange={handleDescription}
-            defaultValue={props.b.description}
+            defaultValue={props.blog.description}
             placeholder="Description"
           />
 
@@ -155,7 +160,7 @@ function MyVerticallyCenteredModal(props) {
             {baseImage ? (
               <img src={baseImage} height="200px" alt="" />
             ) : (
-              <img src={props.b.img} height="200px" alt="" />
+              <img src={props.blog.img} height="200px" alt="" />
             )}
           </div>
           <button className="uploadBtn" onClick={onClickUpdate}>
@@ -172,29 +177,34 @@ function MyVerticallyCenteredModal(props) {
   );
 }
 
-const AdminSingleb = ({ b }) => {
+const AdminSingleb = ({ blog }) => {
   const [modalShow, setModalShow] = React.useState(false);
   const onPressDelete = async (id) => {
     try {
-      deleteDoc(doc(db, "b", id));
+      deleteDoc(doc(db, "Blog", id));
     } catch (err) {
       console.log("err--->", err);
     }
   };
   const onPressDeleteMsg = (id) => {
-    swal("Delete Warning!", "Do you really want to Delete this b?", "warning", {
-      buttons: {
-        cancel: "NO",
-        catch: {
-          text: "YES",
-          value: "catch",
+    swal(
+      "Delete Warning!",
+      "Do you really want to Delete this blog?",
+      "warning",
+      {
+        buttons: {
+          cancel: "NO",
+          catch: {
+            text: "YES",
+            value: "catch",
+          },
         },
-      },
-    }).then((value) => {
+      }
+    ).then((value) => {
       switch (value) {
         case "catch":
           onPressDelete(id);
-          swal("Success!", "You have successfully Delete the b!", "success");
+          swal("Success!", "You have successfully Delete the blog!", "success");
           break;
         default:
       }
@@ -202,19 +212,19 @@ const AdminSingleb = ({ b }) => {
   };
 
   return (
-    <div key={b.id} className="col-lg-4 col-md-4 mt-5">
+    <div key={blog.id} className="col-lg-4 col-md-4 mt-5">
       <div className="serialDiv">
-        <span className="ps-2">{b.serial}</span>
+        <span className="ps-2">{blog.serial}</span>
       </div>
       <img
-        src={b.img}
+        src={blog.img}
         alt=""
         width="100%"
         height="300px"
         style={{ border: "5px solid black" }}
       />
 
-      <button className="delBtn" onClick={() => onPressDeleteMsg(b.id)}>
+      <button className="delBtn" onClick={() => onPressDeleteMsg(blog.id)}>
         Delete
       </button>
       <button className="editBtn" onClick={() => setModalShow(true)}>
@@ -222,7 +232,7 @@ const AdminSingleb = ({ b }) => {
       </button>
       <MyVerticallyCenteredModal
         show={modalShow}
-        b={b}
+        blog={blog}
         onHide={() => setModalShow(false)}
       />
     </div>

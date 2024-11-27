@@ -3,21 +3,32 @@ import { Link, useParams } from "react-router-dom";
 import BannerTitle from "../../../Components/BannerTitle/BannerTitle";
 import Carousel from "react-multi-carousel";
 import Button from "../../../Components/Button/Button";
+import { collection, onSnapshot, query } from "firebase/firestore";
+import { db } from "../../../Hooks/useFirebase";
 
 const DetailsBlog = () => {
   const { id } = useParams();
   const [blogs, setBlogs] = useState([]);
   const [singleBlog, setSingleBlog] = useState({});
-  const ID = parseInt(id);
+  const ID = id;
+
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    fetch(
-      "https://raw.githubusercontent.com/Mahir-Ahmed-250/API/gh-pages/Data.json"
-    )
-      .then((res) => res.json())
-      .then((data) => setBlogs(data));
+    setLoading(true);
+    //create the query
+    const q = query(collection(db, "Blog"));
+    //create listener
+    const bannerListenerSubscription = onSnapshot(q, (querySnapShot) => {
+      const list = [];
+      querySnapShot.forEach((doc) => {
+        list.push({ ...doc.data(), id: doc.id });
+      });
+      setBlogs(list);
+      setLoading(false);
+    });
+    return bannerListenerSubscription;
   }, []);
-
   useEffect(() => {
     const foundService = blogs.find((service) => service.id === ID);
     setSingleBlog(foundService);
@@ -38,22 +49,18 @@ const DetailsBlog = () => {
               alt=""
             />
           </div>
-          <div className="col-lg-6 mt-3">
+          <div className="col-lg-6">
             <h1
               style={{
                 fontSize: "55px",
-                marginTop: "20px",
+
                 fontWeight: "bold",
               }}
               className="treatment">
               {" "}
               {singleBlog?.name}
             </h1>
-            <h6 className="price">Price: ${singleBlog?.price}</h6>
-            <p>{singleBlog?.description}</p>
-            <h6 className="doctor">
-              Specialized Doctor : {singleBlog?.doctor}
-            </h6>
+            <p style={{ textAlign: "justify" }}>{singleBlog?.description}</p>
           </div>
         </div>
       </div>
@@ -120,7 +127,12 @@ const DetailsBlog = () => {
           {blogs.map((blog) => (
             <div key={blog.id}>
               <div className="card p-3 me-4 mb-5">
-                <img src={blog.img} className="bannerImg h-100" alt="" />
+                <img
+                  src={blog.img}
+                  className="bannerImg"
+                  alt=""
+                  style={{ height: "300px" }}
+                />
                 <h3 className="ms-3 mt-3">{blog.name}</h3>
                 <div className="mt-auto ms-3 mb-3">
                   <Link to={`/blog/${blog.id}`}>

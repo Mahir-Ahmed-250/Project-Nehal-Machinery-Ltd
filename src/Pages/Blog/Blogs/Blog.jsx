@@ -3,6 +3,9 @@ import BannerTitle from "../../../Components/BannerTitle/BannerTitle";
 import "./Blog.css";
 import SingleBlog from "../SingleBlog/SingleBlog";
 import Button from "../../../Components/Button/Button";
+import { collection, onSnapshot, query } from "firebase/firestore";
+import { db } from "../../../Hooks/useFirebase";
+import LoadingSkeleton from "../../../AdminPannel/Components/LoadingSkeleton/LoadingSkeleton";
 
 const Blog = () => {
   const [posts, setPosts] = useState([]);
@@ -22,53 +25,72 @@ const Blog = () => {
     showLessItems();
     setTimeout(scrollToTop, 0);
   };
-  useEffect(() => {
-    fetch(
-      "https://raw.githubusercontent.com/Mahir-Ahmed-250/API/gh-pages/Data.json"
-    )
-      .then((res) => res.json())
-      .then((data) => setPosts(data));
-  }, []);
 
+  const [blogs, setBlogs] = useState([]);
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    setLoading(true);
+    //create the query
+    const q = query(collection(db, "Blog"));
+    //create listener
+    const bannerListenerSubscription = onSnapshot(q, (querySnapShot) => {
+      const list = [];
+      querySnapShot.forEach((doc) => {
+        list.push({ ...doc.data(), id: doc.id });
+      });
+      setBlogs(list);
+      setLoading(false);
+    });
+    return bannerListenerSubscription;
+  }, []);
   return (
     <>
       <div className="blogBannerContainer">
         <BannerTitle title1="Blog" title2="Nehal Machinery Ltd" />
       </div>
-      <div className="container">
-        <div className="row">
-          {posts.slice(0, visible).map((post) => (
-            <SingleBlog key={post.id} post={post} />
-          ))}
+      {loading ? (
+        <div className="container mt-5">
+          <LoadingSkeleton />
         </div>
-        <div className="m-4">
-          {(posts || []).length > visible && (
-            <div className="col-md-12  text-center">
-              <Button
-                onClick={showMoreItems}
-                title="Load More"
-                width="300px"
-                border="2px solid black"
-                color="black"
-                fontSize="30px"
-              />
+      ) : (
+        <>
+          <div className="container">
+            <div className="row">
+              {blogs.slice(0, visible).map((blog) => (
+                <SingleBlog key={blog.id} blog={blog} />
+              ))}
             </div>
-          )}
+            <div className="m-4">
+              {(posts || []).length > visible && (
+                <div className="col-md-12  text-center">
+                  <Button
+                    onClick={showMoreItems}
+                    title="Load More"
+                    width="300px"
+                    border="2px solid black"
+                    color="black"
+                    fontSize="30px"
+                  />
+                </div>
+              )}
 
-          {(posts || []).length < visible + 1 && (
-            <div className="col-md-12 text-center">
-              <Button
-                onClick={handleClick}
-                title="Load Less"
-                width="300px"
-                border="2px solid black"
-                color="black"
-                fontSize="30px"
-              />
+              {(posts || []).length < visible + 1 && (
+                <div className="col-md-12 text-center">
+                  <Button
+                    onClick={handleClick}
+                    title="Load Less"
+                    width="300px"
+                    border="2px solid black"
+                    color="black"
+                    fontSize="30px"
+                  />
+                </div>
+              )}
             </div>
-          )}
-        </div>
-      </div>
+          </div>
+        </>
+      )}
     </>
   );
 };
