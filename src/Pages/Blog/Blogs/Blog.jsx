@@ -92,7 +92,7 @@ const Blog = () => {
                 </>
               ) : (
                 <center>
-                  <img src={img} alt="" style={{ height: "60vh" }} />
+                  <img src={img} alt="" style={{ width: "100%" }} />
                 </center>
               )}
             </div>
