@@ -6,9 +6,9 @@ import Button from "../../../Components/Button/Button";
 import { collection, onSnapshot, query } from "firebase/firestore";
 import { db } from "../../../Hooks/useFirebase";
 import LoadingSkeleton from "../../../AdminPannel/Components/LoadingSkeleton/LoadingSkeleton";
+import img from "../../../Assets/noblog.jpg";
 
 const Blog = () => {
-  const [posts, setPosts] = useState([]);
   const [visible, setVisible] = useState(3);
 
   const showMoreItems = () => {
@@ -57,35 +57,43 @@ const Blog = () => {
         <>
           <div className="container">
             <div className="row">
-              {blogs.slice(0, visible).map((blog) => (
-                <SingleBlog key={blog.id} blog={blog} />
-              ))}
-            </div>
-            <div className="m-4">
-              {(posts || []).length > visible && (
-                <div className="col-md-12  text-center">
-                  <Button
-                    onClick={showMoreItems}
-                    title="Load More"
-                    width="300px"
-                    border="2px solid black"
-                    color="black"
-                    fontSize="30px"
-                  />
-                </div>
-              )}
+              {blogs.length > 0 ? (
+                <>
+                  {blogs.slice(0, visible).map((blog) => (
+                    <SingleBlog key={blog.id} blog={blog} />
+                  ))}
+                  <div className="m-4">
+                    {(blogs || []).length > visible && (
+                      <div className="col-md-12  text-center">
+                        <Button
+                          onClick={showMoreItems}
+                          title="Load More"
+                          width="300px"
+                          border="2px solid black"
+                          color="black"
+                          fontSize="30px"
+                        />
+                      </div>
+                    )}
 
-              {(posts || []).length < visible + 1 && (
-                <div className="col-md-12 text-center">
-                  <Button
-                    onClick={handleClick}
-                    title="Load Less"
-                    width="300px"
-                    border="2px solid black"
-                    color="black"
-                    fontSize="30px"
-                  />
-                </div>
+                    {(blogs || []).length < visible + 1 && (
+                      <div className="col-md-12 text-center">
+                        <Button
+                          onClick={handleClick}
+                          title="Load Less"
+                          width="300px"
+                          border="2px solid black"
+                          color="black"
+                          fontSize="30px"
+                        />
+                      </div>
+                    )}
+                  </div>
+                </>
+              ) : (
+                <center>
+                  <img src={img} alt="" style={{ height: "60vh" }} />
+                </center>
               )}
             </div>
           </div>
